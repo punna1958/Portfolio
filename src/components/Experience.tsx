@@ -29,48 +29,51 @@ const Experience = () => (
               </div>
               
               {/* Experience Card */}
-              <div className="ml-8 bg-card border border-border p-6 rounded-lg relative shadow-sm">
-                {/* Triangle Pointer */}
-                <div 
-                  className="absolute -left-2 top-7 w-4 h-4 rotate-45 border-l border-b border-border bg-card"
-                  style={{ zIndex: 1 }}
-                />
-                
-                <div className="flex items-start justify-between relative" style={{ zIndex: 2 }}>
-                  <div className="space-y-1">
-                    <h3 className="text-xl font-semibold text-foreground">
-                      <a 
-                        href={exp.companyUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 group border-b border-transparent hover:border-current transition-colors"
-                      >
-                        {exp.company}
-                        <Link className="h-4 w-4 transition-opacity group-hover:text-primary" />
-                      </a>
-                    </h3>
-                    <p className="text-foreground/60 font-medium">{exp.role}</p>
-                    <div className="flex items-center gap-2 text-sm text-foreground/60">
-                      <span>{exp.period}</span>
-                      <span>•</span>
-                      <span>{exp.location}</span>
+              <div className="ml-8 relative group">
+                <a 
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-card border border-border p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                >
+                  {/* Triangle Pointer */}
+                  <div 
+                    className="absolute -left-2 top-7 w-4 h-4 rotate-45 border-l border-b border-border bg-card"
+                    style={{ zIndex: 1 }}
+                  />
+                  
+                  <div className="flex items-start justify-between relative" style={{ zIndex: 2 }}>
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-semibold text-foreground">
+                        <span className="inline-flex items-center gap-2 group/title">
+                          {exp.company}
+                          <Link className="h-4 w-4 text-primary" />
+                        </span>
+                      </h3>
+                      <p className="text-foreground/60 font-medium">{exp.role}</p>
+                      <div className="flex items-center gap-2 text-sm text-foreground/60">
+                        <span>{exp.period}</span>
+                        <span>•</span>
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
+                    
+                    <a 
+                      href={exp.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground/60 hover:text-foreground transition-colors p-2 hover:bg-foreground/5 rounded-full relative z-10"
+                      title={`${exp.company} LinkedIn`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
                   </div>
                   
-                  <a 
-                    href={exp.linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/60 hover:text-foreground transition-colors p-2 hover:bg-foreground/5 rounded-full"
-                    title={`${exp.company} LinkedIn`}
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </div>
-                
-                <p className="mt-4 text-foreground/80 leading-relaxed">
-                  {exp.description}
-                </p>
+                  <p className="mt-4 text-foreground/80 leading-relaxed">
+                    {exp.description}
+                  </p>
+                </a>
               </div>
             </div>
           ))}
