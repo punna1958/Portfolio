@@ -1,5 +1,5 @@
 // components/Hero.tsx
-import { Mail, Phone, Github } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
 export const Hero = () => (
@@ -22,9 +22,20 @@ export const Hero = () => (
         </div>
 
         {/* Content */}
-        <h1 className="text-4xl font-bold text-foreground sm:text-5xl tracking-tight">
-          Snehdeep Singh
-        </h1>
+        <div className="flex items-center justify-center gap-2">
+          <h1 className="text-4xl font-bold text-foreground sm:text-5xl tracking-tight">
+            Snehdeep Singh
+          </h1>
+          <a 
+            href="https://www.linkedin.com/in/snehdeep-singh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/60 hover:text-foreground transition-colors inline-flex items-center"
+            title="Connect on LinkedIn"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+        </div>
         <p className="mt-4 text-xl text-foreground/80 font-medium">
           Senior Full Stack Engineer
         </p>
