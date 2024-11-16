@@ -92,7 +92,7 @@ export const experiences = [
     period: "Sept 2020 - Dec 2020",
     location: "Jalandhar",
     description: "Interned as a Web Developer, gaining practical experience in Java, Python, HTML, CSS, and JavaScript. Participated in full software development lifecycle.",
-    companyUrl: "https://gtbinfotech.in/",
+    companyUrl: "https://www.gtbinfotech.com/",
     linkedinUrl: "https://www.linkedin.com/company/gtbinfotech/"
   }
 ];
