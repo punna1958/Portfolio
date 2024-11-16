@@ -43,10 +43,10 @@ const Experience = () => (
                         href={exp.companyUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover:text-foreground/80 flex items-center gap-2 group"
+                        className="inline-flex items-center gap-2 group border-b border-transparent hover:border-current transition-colors"
                       >
                         {exp.company}
-                        <Link className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <Link className="h-4 w-4 transition-opacity group-hover:text-primary" />
                       </a>
                     </h3>
                     <p className="text-foreground/60 font-medium">{exp.role}</p>
