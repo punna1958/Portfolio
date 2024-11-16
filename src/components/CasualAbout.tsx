@@ -1,19 +1,22 @@
 import { useInView } from '@/hooks/useInView';
-import { Car, Bike, Music, Radio, Rocket, Headphones } from 'lucide-react';
+import { Car, Bike, Music, Radio, Rocket, Headphones, LucideIcon } from 'lucide-react';
 import { MeteorShower } from './MeteorShower';
 
+
+
+interface InterestCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  delay: number;
+}
 
 const InterestCard = ({ 
   icon: Icon, 
   title, 
   description, 
   delay 
-}: { 
-  icon: any; 
-  title: string; 
-  description: string;
-  delay: number;
-}) => {
+}: InterestCardProps) => {
   const [ref, isInView] = useInView({
     threshold: 0.2,
     rootMargin: '50px 0px',
@@ -59,7 +62,7 @@ export const CasualAbout = () => {
       }}
       ref={sectionRef}
     >
-      <style jsx global>{`
+     <style jsx global>{`
         @keyframes meteorFall {
           0% {
             transform: translateX(0) translateY(0) rotate(-45deg);
@@ -91,19 +94,6 @@ export const CasualAbout = () => {
 
       <MeteorShower />
 
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 0% 0%, rgb(99 102 241 / 20%), transparent 25%),
-            radial-gradient(circle at 100% 100%, rgb(99 102 241 / 20%), transparent 25%)
-          `,
-          transform: isSectionInView ? 'scale(1)' : 'scale(0.8)',
-          opacity: isSectionInView ? 0.2 : 0,
-          transition: 'all 1.5s ease-out',
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <h2 
           className="text-3xl font-bold text-slate-200 mb-4"
@@ -124,7 +114,7 @@ export const CasualAbout = () => {
             transition: 'all 700ms ease-out 100ms',
           }}
         >
-          When I'm not crafting code, you'll find me exploring tech, roads, and rhythms...
+          When I&apos;m not crafting code, you&apos;ll find me exploring tech, roads, and rhythms...
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -159,7 +149,7 @@ export const CasualAbout = () => {
           <InterestCard
             icon={Rocket}
             title="Tech Enthusiast"
-            description="Constantly exploring technological advancements. From AI to blockchain, I'm always eager to learn and understand what's next in tech."
+            description="Constantly exploring technological advancements. From AI to blockchain, I&apos;m always eager to learn and understand what&apos;s next in tech."
             delay={600}
           />
           
