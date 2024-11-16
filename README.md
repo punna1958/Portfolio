@@ -8,7 +8,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Dark/Light Mode**: Automatic theme switching based on system preferences
 - **Interactive Timeline**: Professional experience displayed in a LinkedIn-style timeline
 - **Company Links**: Direct links to companies' websites and LinkedIn profiles
-- **Modern Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+- **Modern Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
 - **Custom Fonts**: Uses Geist Font family for modern typography
 - **Performance Optimized**: Fast loading and optimal image handling
 
