@@ -28,29 +28,31 @@ export const Hero = () => (
         <p className="mt-4 text-xl text-gray-600">
           Senior Full Stack Engineer
         </p>
-        <div className="mt-6 flex justify-center gap-x-8">
+
+        {/* Contact Links - Responsive Layout */}
+        <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 px-4">
           <a 
             href="mailto:singhsnehdeep99@gmail.com" 
-            className="text-gray-600 hover:text-gray-800 flex items-center gap-2"
+            className="text-gray-600 hover:text-gray-800 flex items-center gap-2 w-full sm:w-auto justify-center"
           >
-            <Mail className="h-4 w-4" />
-            <span>singhsnehdeep99@gmail.com</span>
+            <Mail className="h-4 w-4 flex-shrink-0" />
+            <span className="text-sm sm:text-base truncate">singhsnehdeep99@gmail.com</span>
           </a>
           <a 
             href="tel:+917009928716" 
-            className="text-gray-600 hover:text-gray-800 flex items-center gap-2"
+            className="text-gray-600 hover:text-gray-800 flex items-center gap-2 w-full sm:w-auto justify-center"
           >
-            <Phone className="h-4 w-4" />
-            <span>+91 700992876</span>
+            <Phone className="h-4 w-4 flex-shrink-0" />
+            <span className="text-sm sm:text-base">+91 7009928716</span>
           </a>
           <a 
             href="https://github.com/Snehdeep-ts" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-gray-600 hover:text-gray-800 flex items-center gap-2"
+            className="text-gray-600 hover:text-gray-800 flex items-center gap-2 w-full sm:w-auto justify-center"
           >
-            <Github className="h-4 w-4" />
-            <span>GitHub</span>
+            <Github className="h-4 w-4 flex-shrink-0" />
+            <span className="text-sm sm:text-base">GitHub</span>
           </a>
         </div>
       </div>
