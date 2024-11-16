@@ -29,13 +29,8 @@ const Experience = () => (
               </div>
               
               {/* Experience Card */}
-              <div className="ml-8 relative group">
-                <a 
-                  href={exp.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-card border border-border p-6 rounded-lg shadow-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-                >
+              <div className="ml-8 relative group cursor-pointer" onClick={() => window.open(exp.companyUrl, '_blank', 'noopener,noreferrer')}>
+                <div className="bg-card border border-border p-6 rounded-lg relative shadow-sm transition-all duration-150 hover:scale-[1.02] hover:shadow-md">
                   {/* Triangle Pointer */}
                   <div 
                     className="absolute -left-2 top-7 w-4 h-4 rotate-45 border-l border-b border-border bg-card"
@@ -44,11 +39,10 @@ const Experience = () => (
                   
                   <div className="flex items-start justify-between relative" style={{ zIndex: 2 }}>
                     <div className="space-y-1">
-                      <h3 className="text-xl font-semibold text-foreground">
-                        <span className="inline-flex items-center gap-2 group/title">
-                          {exp.company}
-                          <Link className="h-4 w-4 text-primary" />
-                        </span>
+                      <h3 className="relative text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-150">
+                        {exp.company}
+                        <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-150 ease-out" />
+                        <Link className="inline-block h-4 w-4 ml-2 text-primary align-baseline" />
                       </h3>
                       <p className="text-foreground/60 font-medium">{exp.role}</p>
                       <div className="flex items-center gap-2 text-sm text-foreground/60">
@@ -73,7 +67,7 @@ const Experience = () => (
                   <p className="mt-4 text-foreground/80 leading-relaxed">
                     {exp.description}
                   </p>
-                </a>
+                </div>
               </div>
             </div>
           ))}

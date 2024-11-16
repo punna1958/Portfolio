@@ -11,13 +11,8 @@ export const Projects = ({ projects }: ProjectsProps) => (
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Projects</h2>
       <div className="grid gap-8 md:grid-cols-2">
         {projects.map((project, index) => (
-          <div key={index} className="group relative">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-50 p-6 rounded-lg shadow-sm transition-all duration-150 hover:scale-[1.02] hover:shadow-md"
-            >
+          <div key={index} className="group relative h-full cursor-pointer" onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
+            <div className="block bg-gray-50 p-6 rounded-lg shadow-sm transition-all duration-150 hover:scale-[1.02] hover:shadow-md h-full flex flex-col">
               <div className="flex justify-between items-start">
                 <h3 className="relative text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-150">
                   <span className="relative">
@@ -25,9 +20,17 @@ export const Projects = ({ projects }: ProjectsProps) => (
                     <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-blue-600 group-hover:w-full transition-all duration-150 ease-out" />
                   </span>
                 </h3>
-                <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-blue-600 transition-colors duration-150" />
+                <a 
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-600 transition-colors duration-150 shrink-0 ml-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ExternalLink className="h-5 w-5" />
+                </a>
               </div>
-              <p className="mt-2 text-gray-600">{project.description}</p>
+              <p className="mt-2 text-gray-600 flex-grow">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tech.map((tech, techIndex) => (
                   <span
@@ -39,14 +42,16 @@ export const Projects = ({ projects }: ProjectsProps) => (
                 ))}
               </div>
               {project.isOngoing && (
-                <span className="mt-4 inline-block px-3 py-1 text-sm bg-green-100 text-green-800 rounded-full ring-1 ring-green-100 group-hover:ring-green-200 transition-all duration-150">
-                  Ongoing
-                </span>
+                <div className="mt-4">
+                  <span className="px-3 py-1 text-sm bg-green-100 text-green-800 rounded-full ring-1 ring-green-100 group-hover:ring-green-200 transition-all duration-150">
+                    Ongoing
+                  </span>
+                </div>
               )}
               
               {/* Hover effect for the entire card */}
               <div className="absolute inset-0 rounded-lg ring-1 ring-black/5 group-hover:ring-blue-100 transition-all duration-150" />
-            </a>
+            </div>
           </div>
         ))}
       </div>
