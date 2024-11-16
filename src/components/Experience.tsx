@@ -1,65 +1,6 @@
 import React from 'react';
 import { Calendar, Link, Linkedin } from 'lucide-react';
-
-interface Experience {
-  company: string;
-  role: string;
-  period: string;
-  location: string;
-  description: string;
-  companyUrl: string;
-  linkedinUrl: string;
-}
-
-const experiences: Experience[] = [
-  {
-    company: "Crownstack Technologies",
-    role: "Sr. Software Engineer",
-    period: "Feb 2024 - Present",
-    location: "Noida",
-    description: "Spearhead full-stack development using MERN stack, collaborating with cross-functional teams to design and implement scalable web applications. Focus on optimizing performance, ensuring code quality, and mentoring junior developers.",
-    companyUrl: "https://www.crownstack.com/",
-    linkedinUrl: "https://www.linkedin.com/company/crownstack/"
-  },
-  {
-    company: "Kiwitech LLC",
-    role: "Software Engineer: Web",
-    period: "April 2022 - Jan 2024",
-    location: "Noida",
-    description: "Led frontend development efforts on key projects, collaborating closely with cross-functional teams. Ensured alignment of frontend solutions with client goals and expectations.",
-    companyUrl: "https://www.kiwitech.com/",
-    linkedinUrl: "https://www.linkedin.com/company/kiwitech/"
-  },
-  {
-    company: "Cognizant",
-    role: "Program Analyst",
-    period: "Jan 2021 - Mar 2022",
-    location: "Bangalore",
-    description: "Worked with platforms like Shopify and Salesforce, implementing custom solutions and integrations. Developed comprehensive healthcare e-commerce solutions.",
-    companyUrl: "https://www.cognizant.com/in/en",
-    linkedinUrl: "https://www.linkedin.com/company/cognizant/"
-  },
-  {
-    company: "GTB Infotech",
-    role: "Intern",
-    period: "Sept 2020 - Dec 2020",
-    location: "Jalandhar",
-    description: "Interned as a Web Developer, gaining practical experience in Java, Python, HTML, CSS, and JavaScript. Participated in full software development lifecycle.",
-    companyUrl: "https://gtbinfotech.in/",
-    linkedinUrl: "https://www.linkedin.com/company/gtbinfotech/"
-  }
-];
-
-interface Experience {
-  company: string;
-  role: string;
-  period: string;
-  location: string;
-  description: string;
-  companyUrl: string;
-  linkedinUrl: string;
-}
-
+import { experiences } from '@/data';
 
 const Experience = () => (
   <section className="py-16 bg-background relative">

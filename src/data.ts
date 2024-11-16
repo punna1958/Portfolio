@@ -64,13 +64,9 @@ export const experiences = [
     role: "Sr. Software Engineer",
     period: "Feb 2024 - Present",
     location: "Noida",
-    description: "Spearhead full-stack development using the MERN stack, collaborating with cross-functional teams to design and implement scalable web applications. Focus on optimizing performance, ensuring code quality, and mentoring junior developers in best practices for modern web development.",
-    achievements: [
-      "Lead full-stack development initiatives",
-      "Mentor junior developers",
-      "Optimize application performance",
-      "Ensure code quality standards"
-    ]
+    description: "Spearhead full-stack development using MERN stack, collaborating with cross-functional teams to design and implement scalable web applications. Focus on optimizing performance, ensuring code quality, and mentoring junior developers.",
+    companyUrl: "https://www.crownstack.com/",
+    linkedinUrl: "https://www.linkedin.com/company/crownstack/"
   },
   {
     company: "Kiwitech LLC",
@@ -78,40 +74,29 @@ export const experiences = [
     period: "April 2022 - Jan 2024",
     location: "Noida",
     description: "Led frontend development efforts on key projects, collaborating closely with cross-functional teams. Ensured alignment of frontend solutions with client goals and expectations.",
-    achievements: [
-      "Led frontend development initiatives",
-      "Collaborated with cross-functional teams",
-      "Aligned solutions with client goals",
-      "Enhanced project delivery processes"
-    ]
+    companyUrl: "https://www.kiwitech.com/",
+    linkedinUrl: "https://www.linkedin.com/company/kiwitech/"
   },
   {
     company: "Cognizant",
     role: "Program Analyst",
     period: "Jan 2021 - Mar 2022",
     location: "Bangalore",
-    description: "Worked with platforms like Shopify and Salesforce, implementing custom solutions and integrations. Developed comprehensive healthcare e-commerce solutions and optimized patient engagement systems.",
-    achievements: [
-      "Developed healthcare e-commerce solutions",
-      "Implemented Shopify and Salesforce integrations",
-      "Enhanced patient engagement systems",
-      "Optimized platform performance"
-    ]
+    description: "Worked with platforms like Shopify and Salesforce, implementing custom solutions and integrations. Developed comprehensive healthcare e-commerce solutions.",
+    companyUrl: "https://www.cognizant.com/in/en",
+    linkedinUrl: "https://www.linkedin.com/company/cognizant/"
   },
   {
     company: "GTB Infotech",
     role: "Intern",
     period: "Sept 2020 - Dec 2020",
     location: "Jalandhar",
-    description: "Interned as a Web Developer, gaining practical experience in Java, Python, HTML, CSS, and JavaScript. Participated in full software development lifecycle and implemented frontend features ensuring optimal user experience.",
-    achievements: [
-      "Developed web applications using Java and Python",
-      "Implemented frontend features",
-      "Participated in full SDLC",
-      "Gained practical development experience"
-    ]
+    description: "Interned as a Web Developer, gaining practical experience in Java, Python, HTML, CSS, and JavaScript. Participated in full software development lifecycle.",
+    companyUrl: "https://gtbinfotech.in/",
+    linkedinUrl: "https://www.linkedin.com/company/gtbinfotech/"
   }
 ];
+
 
 export const skills = {
   programming: [
