@@ -1,4 +1,4 @@
-import {  Skills } from "./types";
+
 export const projects = [
   {
     title: "QuickLearn",
