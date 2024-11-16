@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Snehdeep Singh - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design with dark mode support and a timeline-based experience section.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design**: Optimized for all screen sizes
+- **Dark/Light Mode**: Automatic theme switching based on system preferences
+- **Interactive Timeline**: Professional experience displayed in a LinkedIn-style timeline
+- **Company Links**: Direct links to companies' websites and LinkedIn profiles
+- **Modern Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+- **Custom Fonts**: Uses Geist Font family for modern typography
+- **Performance Optimized**: Fast loading and optimal image handling
+
+## 🛠️ Tech Stack
+
+- [Next.js 14](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+## 📦 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Experience.tsx
+│   ├── Projects.tsx
+│   └── Skills.tsx
+└── public/
+    ├── profile.jpg
+    ├── favicon.ico
+    └── other assets...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**
+```bash
+git clone https://github.com/Snehdeep-ts/portfolio.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install dependencies**
+```bash
+cd portfolio
+npm install
+```
 
-## Learn More
+3. **Run the development server**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Build for production**
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Colors
+The project uses a custom color scheme with royal blue accents. Colors can be modified in:
+```css
+/* globals.css */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
-## Deploy on Vercel
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --foreground: #ededed;
+  }
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Content
+Update your information in:
+- `components/Hero.tsx` for personal info
+- `components/Experience.tsx` for work history
+- `components/Projects.tsx` for project showcase
+- `components/Skills.tsx` for technical skills
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Deployment
+
+The site is deployed on Vercel. For deployment:
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Follow the deployment steps
+4. Your site will be live!
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with breakpoints:
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
+
+## ⚡ Performance
+
+- Optimized images using Next.js Image component
+- Lazy loading of components
+- Minimized CSS with Tailwind
+- Efficient font loading with next/font
+
+## 🔗 Links
+
+- [Live Demo](https://your-portfolio-url.com)
+- [GitHub Repository](https://github.com/Snehdeep-ts/portfolio)
+- [LinkedIn](https://www.linkedin.com/in/snehdeep-singh/)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Snehdeep Singh**
+- LinkedIn: [@snehdeep-singh](https://www.linkedin.com/in/snehdeep-singh/)
+- GitHub: [@Snehdeep-ts](https://github.com/Snehdeep-ts)
+- Email: singhsnehdeep99@gmail.com
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Snehdeep-ts/portfolio/issues).
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🌟 Show your support
+
+Give a ⭐️ if you like this project!
