@@ -11,7 +11,7 @@ export const Hero = () => (
           <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <div className="relative w-full h-full">
               <Image
-                src="/profile.jpg"
+                src="/profile.jpeg"
                 alt="Snehdeep Singh"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
