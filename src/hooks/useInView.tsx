@@ -21,5 +21,5 @@ export const useInView = (options = {}) => {
     };
   }, [options]);
 
-  return [ref, isInView];
+  return [ref, isInView] as const;
 };

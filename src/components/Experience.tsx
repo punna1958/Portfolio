@@ -1,31 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Calendar, Link, Linkedin } from 'lucide-react';
 import { experiences } from '@/data';
-// import { Experience as TExperience } from '@/types';
-
-const useInView = (options = {}) => {
-  const [isInView, setIsInView] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
-    }, options);
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [options]);
-
-  return [ref, isInView] as const;
-};
+import { useInView } from '@/hooks/useInView';
 
 // Extracted ExperienceCard component
 const ExperienceCard = ({ exp }:{exp:{ company: string;
