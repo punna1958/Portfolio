@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Calendar, Link, Linkedin } from 'lucide-react';
 import { experiences } from '@/data';
+// import { Experience as TExperience } from '@/types';
 
 const useInView = (options = {}) => {
   const [isInView, setIsInView] = useState(false);
@@ -27,7 +28,13 @@ const useInView = (options = {}) => {
 };
 
 // Extracted ExperienceCard component
-const ExperienceCard = ({ exp, index }: { exp: any; index: number }) => {
+const ExperienceCard = ({ exp }:{exp:{ company: string;
+    role: string;
+    period: string;
+    location: string;
+    description: string;
+    companyUrl: string;
+    linkedinUrl: string}}) => {
   const [cardRef, isCardInView] = useInView({
     threshold: 0.2,
     rootMargin: '0px 0px -50px 0px',
@@ -125,7 +132,7 @@ const Experience = () => {
           
           <div className="space-y-16">
             {experiences.map((exp, index) => (
-              <ExperienceCard key={index} exp={exp} index={index} />
+              <ExperienceCard key={index} exp={exp}  />
             ))}
           </div>
         </div>
