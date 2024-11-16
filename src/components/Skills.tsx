@@ -1,6 +1,5 @@
 import { useInView } from '@/hooks/useInView';
-import { Mutable } from 'next/dist/client/components/router-reducer/router-reducer-types';
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject } from 'react';
 
 interface Skill {
   name: string;
@@ -25,31 +24,6 @@ interface SkillCategoryProps {
   skills: Skill[];
   delay: number;
 }
-
-// Custom hook for intersection observer
-// const useInView = (options = {}) => {
-//   const [isInView, setIsInView] = useState(false);
-//   const ref = useRef(null);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(([entry]) => {
-//       setIsInView(entry.isIntersecting);
-//     }, options);
-
-//     const currentRef = ref.current;
-//     if (currentRef) {
-//       observer.observe(currentRef);
-//     }
-
-//     return () => {
-//       if (currentRef) {
-//         observer.unobserve(currentRef);
-//       }
-//     };
-//   }, [options]);
-
-//   return [ref, isInView] as const;
-// };
 
 const SkillCategory = ({ title, skills, delay }: SkillCategoryProps) => {
   const [ref, isInView] = useInView({
