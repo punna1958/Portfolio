@@ -149,7 +149,7 @@ export const CasualAbout = () => {
           <InterestCard
             icon={Rocket}
             title="Tech Enthusiast"
-            description="Constantly exploring technological advancements. From AI to blockchain, I&apos;m always eager to learn and understand what&apos;s next in tech."
+            description="Constantly exploring technological advancements. From AI to quantum computing, I&apos;m always eager to learn and understand what&apos;s next in tech."
             delay={600}
           />
           
