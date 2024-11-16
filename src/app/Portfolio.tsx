@@ -8,6 +8,7 @@ import { Education } from '../components/Education';
 import { Languages } from '../components/Languages';
 import { Footer } from '../components/Footer';
 import { projects, skills } from '../data';
+import CasualAbout from '@/components/CasualAbout';
 
 const Portfolio = () => {
   return (
@@ -17,6 +18,7 @@ const Portfolio = () => {
       <Experience  />
       <Projects projects={projects} />
       <SkillsSection skills={skills} />
+      <CasualAbout/>
       <Education />
       <Languages />
       <Footer />
