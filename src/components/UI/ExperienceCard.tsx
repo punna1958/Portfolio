@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
-import { Calendar, Link, Linkedin, ExternalLink } from 'lucide-react';
+import { Calendar, Link, Linkedin, ExternalLink, MapPin } from 'lucide-react';
 import Modal from './Modal';
 
 const ExperienceCard = ({
   exp,
+  isCurrent = false,
 }: {
   exp: {
     company: string;
@@ -15,6 +16,7 @@ const ExperienceCard = ({
     companyUrl: string;
     linkedinUrl: string;
   };
+  isCurrent?: boolean;
 }) => {
   const [cardRef, isCardInView] = useInView({
     threshold: 0.2,
@@ -44,17 +46,18 @@ const ExperienceCard = ({
             : 'opacity-0 -translate-x-8'
         }`}
       >
-        {/* Timeline Dot */}
-        <div
-          className={`absolute -left-[5px] top-8 w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-background transition-all duration-500 delay-300 ${
-            isCardInView ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-          }`}
-          style={{ zIndex: 2 }}
-        />
+        {isCurrent && (
+          <div
+            className={`absolute left-[1px] top-8 w-3.5 h-3.5 bg-[#22c55e] rounded-full transition-all duration-500 delay-300 ${
+              isCardInView ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+            } animate-pulse ring-2 ring-[#22c55e]/30`}
+            style={{ zIndex: 2 }}
+          />
+        )}
 
-        {/* Date Bubble */}
+        {/* Date Bubble - Hidden on mobile, visible on desktop */}
         <div
-          className={`absolute -left-28 top-7 flex items-center gap-2 text-sm text-foreground/60 transition-all duration-500 delay-200 ${
+          className={`hidden sm:flex absolute -left-28 top-7 items-center gap-2 text-sm text-foreground/60 transition-all duration-500 delay-200 ${
             isCardInView
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 -translate-x-4'
@@ -68,10 +71,19 @@ const ExperienceCard = ({
 
         {/* Experience Card */}
         <div
-          className="ml-8 relative group cursor-pointer"
+          className="ml-8 sm:ml-8 relative group cursor-pointer"
           onClick={handleCardClick}
         >
-          <div className="bg-card border border-border p-6 rounded-lg relative shadow-sm transition-all duration-150 hover:scale-[1.02] hover:shadow-md">
+          <div className="bg-card border border-border rounded-lg relative shadow-sm transition-all duration-150 hover:scale-[1.02] hover:shadow-md p-6">
+            {isCurrent && (
+              <div
+                className="absolute -top-2.5 right-4 px-3 py-0.5 bg-[#0b1442] border border-border text-foreground text-xs font-medium rounded-full shadow-sm"
+                style={{ zIndex: 10 }}
+              >
+                Current
+              </div>
+            )}
+
             {/* Triangle Pointer */}
             <div
               className="absolute -left-2 top-7 w-4 h-4 rotate-45 border-l border-b border-border bg-card"
@@ -94,10 +106,24 @@ const ExperienceCard = ({
                     <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out origin-left" />
                   </span>
                 </h3>
-                <p className="text-foreground/60 font-medium">{exp.role}</p>
-                <div className="flex items-center gap-2 text-sm text-foreground/60">
+                <p className="font-medium text-foreground/60">{exp.role}</p>
+
+                {/* Mobile Date Display */}
+                <div className="flex sm:hidden items-center gap-2 text-sm text-foreground/60 mt-2">
+                  <Calendar className="h-4 w-4" />
+                  <span className="font-medium">{exp.period}</span>
+                </div>
+
+                {/* Desktop Location Display */}
+                <div className="hidden sm:flex items-center gap-2 text-sm text-foreground/60">
                   <span>{exp.period}</span>
                   <span>•</span>
+                  <span>{exp.location}</span>
+                </div>
+
+                {/* Mobile Location Display */}
+                <div className="flex sm:hidden items-center gap-2 text-sm text-foreground/60 mt-1">
+                  <MapPin className="h-4 w-4" />
                   <span>{exp.location}</span>
                 </div>
               </div>

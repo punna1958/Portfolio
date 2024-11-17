@@ -16,7 +16,7 @@ const Experience = () => {
         <div className="relative" ref={timelineRef}>
           {/* Animated Vertical Timeline Line */}
           <div
-            className="absolute left-0 top-0 h-full w-1 bg-slate-400  origin-top transition-transform duration-1000"
+            className="absolute left-[7px] sm:left-[7px] top-0 h-full w-0.5 bg-slate-400 origin-top transition-transform duration-1000"
             style={{
               zIndex: 1,
               transform: `scaleY(${timelineInView ? 1 : 0})`,
@@ -25,7 +25,7 @@ const Experience = () => {
 
           <div className="space-y-16">
             {experiences.map((exp, index) => (
-              <ExperienceCard key={index} exp={exp} />
+              <ExperienceCard key={index} exp={exp} isCurrent={index === 0} />
             ))}
           </div>
         </div>
