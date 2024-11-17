@@ -6,13 +6,46 @@ export const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger animations after component mounts
     setIsLoaded(true);
   }, []);
 
   return (
-    <header className="bg-background">
-      <div className="max-w-3xl mx-auto px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+    <header className="relative bg-background overflow-hidden">
+      {/* Animated gradient background */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'linear-gradient(45deg, #0b1442, #06001f, #1a237e, #0b1442)',
+          backgroundSize: '400% 400%',
+          animation: 'gradient 15s ease infinite',
+        }}
+      />
+      <style jsx>{`
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        @keyframes breathe {
+          0% {
+            box-shadow: 0 0 25px 3px rgba(237, 237, 237, 0.15);
+          }
+          50% {
+            box-shadow: 0 0 35px 8px rgba(237, 237, 237, 0.25);
+          }
+          100% {
+            box-shadow: 0 0 25px 3px rgba(237, 237, 237, 0.15);
+          }
+        }
+      `}</style>
+
+      <div className="relative z-10 max-w-3xl mx-auto px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Profile Image Container */}
           <div className={`
@@ -21,10 +54,14 @@ export const Hero = () => {
             ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
           `}>
             <div className={`
-              w-48 h-48 rounded-full overflow-hidden border-4 border-background shadow-xl
-              transform transition-all duration-1000 delay-300
+              w-48 h-48 rounded-full overflow-hidden border-2 border-foreground
+              transform transition-all duration-1000 delay-500
               ${isLoaded ? 'scale-100 rotate-0' : 'scale-95 rotate-6'}
-            `}>
+            `}
+            style={{
+              animation: 'breathe 3s ease-in-out infinite'
+            }}
+            >
               <div className="relative w-full h-full">
                 <Image
                   src="/profile.jpeg"
@@ -41,7 +78,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Content */}
+          {/* Rest of the component remains the same */}
           <div className={`
             flex items-center justify-center gap-2
             transform transition-all duration-700 delay-200
@@ -118,3 +155,5 @@ export const Hero = () => {
     </header>
   );
 };
+
+export default Hero;
