@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Calendar, Link, Linkedin, ExternalLink } from 'lucide-react';
 import Modal from './Modal';
@@ -79,19 +79,33 @@ const ExperienceCard = ({
             />
 
             <div
-              className="flex items-start justify-between relative"
+              className="flex justify-between relative"
               style={{ zIndex: 2 }}
             >
-              <div className="space-y-1">
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-foreground relative inline-flex items-center">
-                  {exp.company}
-                  {isModalCompany ? (
-                    <Link className="h-4 w-4 ml-2 text-foreground" />
-                  ) : (
-                    <ExternalLink className="h-4 w-4 ml-2 text-foreground" />
-                  )}
-                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out origin-left" />
-                </h3>
+              <div className="space-y-1 flex-1 min-w-0">
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-xl font-semibold text-foreground group-hover:text-foreground relative inline-flex items-center">
+                    <span className="inline-flex items-center">
+                      <span className="truncate">{exp.company}</span>
+                      {isModalCompany ? (
+                        <Link className="h-4 w-4 ml-2 shrink-0 text-foreground" />
+                      ) : (
+                        <ExternalLink className="h-4 w-4 ml-2 shrink-0 text-foreground" />
+                      )}
+                    </span>
+                    <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out origin-left" />
+                  </h3>
+                  <a
+                    href={exp.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/60 hover:text-foreground transition-colors p-2 hover:bg-foreground/5 rounded-full shrink-0"
+                    title={`${exp.company} LinkedIn`}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
                 <p className="text-foreground/60 font-medium">{exp.role}</p>
                 <div className="flex items-center gap-2 text-sm text-foreground/60">
                   <span>{exp.period}</span>
@@ -99,17 +113,6 @@ const ExperienceCard = ({
                   <span>{exp.location}</span>
                 </div>
               </div>
-
-              <a
-                href={exp.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-foreground transition-colors p-2 hover:bg-foreground/5 rounded-full relative z-10"
-                title={`${exp.company} LinkedIn`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
             </div>
 
             <p className="mt-4 text-foreground/80 leading-relaxed">
