@@ -95,16 +95,20 @@ const ExperienceCard = ({
               style={{ zIndex: 2 }}
             >
               <div className="space-y-1 min-w-0 flex-1 pr-4">
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-foreground relative pr-2">
-                  <span className="relative inline-flex items-center">
-                    {exp.company}
-                    {isModalCompany ? (
-                      <Link className="h-4 w-4 ml-2 flex-shrink-0 text-foreground" />
-                    ) : (
-                      <ExternalLink className="h-4 w-4 ml-2 flex-shrink-0 text-foreground" />
-                    )}
-                    <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out origin-left" />
-                  </span>
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-foreground">
+                  <div className="relative inline-flex items-start">
+                    <span className="inline-flex items-center">
+                      <span className="relative">
+                        {exp.company}
+                        <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out origin-left" />
+                      </span>
+                      {isModalCompany ? (
+                        <Link className="h-4 w-4 ml-2 flex-shrink-0 text-foreground" />
+                      ) : (
+                        <ExternalLink className="h-4 w-4 ml-2 flex-shrink-0 text-foreground" />
+                      )}
+                    </span>
+                  </div>
                 </h3>
                 <p className="font-medium text-foreground/60">{exp.role}</p>
 
