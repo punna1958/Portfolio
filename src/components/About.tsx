@@ -67,7 +67,7 @@ export const About = () => {
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 200ms',
+            transition: 'all 700ms ease-out 100ms',
           }}
         >
           I&apos;m a software architect who believes in crafting digital
@@ -83,30 +83,30 @@ export const About = () => {
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 300ms',
+            transition: 'all 700ms ease-out 150ms',
           }}
         >
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
             What Drives Me:
           </h3>
           <ul className="space-y-3">
-            <AnimatedListItem delay={400}>
+            <AnimatedListItem delay={200}>
               Building systems that scale with elegance and perform with
               precision
             </AnimatedListItem>
-            <AnimatedListItem delay={500}>
+            <AnimatedListItem delay={250}>
               Transforming complex business challenges into intuitive technical
               solutions
             </AnimatedListItem>
-            <AnimatedListItem delay={600}>
+            <AnimatedListItem delay={300}>
               Leading teams that don&apos;t just write code, but craft
               experiences
             </AnimatedListItem>
-            <AnimatedListItem delay={700}>
+            <AnimatedListItem delay={350}>
               Sharing knowledge and elevating the entire team&apos;s technical
               artistry
             </AnimatedListItem>
-            <AnimatedListItem delay={800}>
+            <AnimatedListItem delay={400}>
               Creating software that makes users forget they&apos;re using
               software
             </AnimatedListItem>
@@ -118,7 +118,7 @@ export const About = () => {
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 900ms',
+            transition: 'all 700ms ease-out 450ms',
           }}
         >
           <p>
@@ -135,7 +135,7 @@ export const About = () => {
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 1000ms',
+            transition: 'all 700ms ease-out 500ms',
           }}
         >
           <p className="text-gray-600 flex items-center gap-2">

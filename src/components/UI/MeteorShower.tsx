@@ -1,3 +1,4 @@
+'use client';
 export const MeteorShower = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -6,7 +7,7 @@ export const MeteorShower = () => {
         const randomDelay = Math.random() * 15; // Random delay up to 15s
         const randomPosition = Math.random() * 100; // Random start position
         const randomDuration = 2 + Math.random() * 2; // Duration between 2-4s
-        
+
         return (
           <div
             key={index}
@@ -16,11 +17,12 @@ export const MeteorShower = () => {
               left: '100%',
               animation: `meteorFall ${randomDuration}s linear ${randomDelay}s infinite`,
               opacity: 0.6,
-              boxShadow: '0 0 0 1px #ffffff10, 0 0 2px #ffffff30, 0 0 10px #ffffff20',
+              boxShadow:
+                '0 0 0 1px #ffffff10, 0 0 2px #ffffff30, 0 0 10px #ffffff20',
             }}
           >
             {/* Meteor tail */}
-            <div 
+            <div
               className="absolute right-0 h-0.5"
               style={{
                 width: `${100 + Math.random() * 100}px`,
@@ -39,7 +41,7 @@ export const MeteorShower = () => {
         const randomX = Math.random() * 100;
         const randomY = Math.random() * 100;
         const twinkleDelay = Math.random() * 5;
-        
+
         return (
           <div
             key={`star-${index}`}
