@@ -16,7 +16,7 @@ const Experience = () => {
         <div className="relative" ref={timelineRef}>
           {/* Animated Vertical Timeline Line */}
           <div
-            className="absolute left-0 top-0 h-full w-1 bg-slate-200 dark:bg-slate-800 origin-top transition-transform duration-1000"
+            className="absolute left-0 top-0 h-full w-1 bg-slate-400  origin-top transition-transform duration-1000"
             style={{
               zIndex: 1,
               transform: `scaleY(${timelineInView ? 1 : 0})`,
