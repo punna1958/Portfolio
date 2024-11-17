@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, ExternalLink } from 'lucide-react';
 
 const Modal: React.FC<{
@@ -8,29 +8,52 @@ const Modal: React.FC<{
   children: React.ReactNode;
   url: string;
 }> = ({ isOpen, onClose, title, children, url }) => {
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   useEffect(() => {
     if (isOpen) {
+      setShouldRender(true);
       document.body.style.overflow = 'hidden';
+      // Start entrance animation after a brief delay to ensure DOM is ready
+      setTimeout(() => setIsAnimating(true), 10);
     } else {
+      setIsAnimating(false);
       document.body.style.overflow = 'unset';
+      // Wait for exit animation to complete before unmounting
+      const timeout = setTimeout(() => setShouldRender(false), 300);
+      return () => clearTimeout(timeout);
     }
+  }, [isOpen]);
+
+  useEffect(() => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, []);
 
-  if (!isOpen) return null;
+  if (!shouldRender) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
         onClick={onClose}
+        className={`fixed inset-0 transition-opacity duration-300 ease-in-out ${
+          isAnimating
+            ? 'bg-black/50 backdrop-blur-sm'
+            : 'bg-black/0 backdrop-blur-none'
+        }`}
       />
 
       {/* Modal Content */}
-      <div className="relative bg-background w-full max-w-[90vw] h-[85vh] rounded-lg shadow-xl transform -translate-y-12">
+      <div
+        className={`relative bg-background w-full max-w-[90vw] h-[85vh] rounded-lg shadow-xl transition-all duration-300 ease-in-out ${
+          isAnimating
+            ? 'opacity-100 translate-y-0 scale-100'
+            : 'opacity-0 translate-y-8 scale-95'
+        }`}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border">
           <h2 className="text-xl font-semibold text-foreground">{title}</h2>
