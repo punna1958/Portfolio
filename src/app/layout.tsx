@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -170,6 +171,7 @@ export default function RootLayout({
         />
 
         {children}
+        <Analytics />
 
         {/* Preload critical resources */}
         <link rel="preload" href="/profile.jpeg" as="image" />
