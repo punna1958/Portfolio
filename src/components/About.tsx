@@ -39,7 +39,6 @@ export const About = () => {
       className="py-16 bg-white relative overflow-hidden"
       ref={sectionRef}
     >
-      {/* Subtle background pattern that fades in */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -71,12 +70,12 @@ export const About = () => {
             transition: 'all 700ms ease-out 200ms',
           }}
         >
-          I'm a software architect who believes in crafting digital experiences
-          that make a difference. My journey spans from writing elegant
-          algorithms to orchestrating enterprise solutions, always with an eye
-          for both technical excellence and business impact. When I'm not
-          architecting systems, you'll find me mentoring fellow developers or
-          exploring the latest in tech innovation.
+          I&apos;m a software architect who believes in crafting digital
+          experiences that make a difference. My journey spans from writing
+          elegant algorithms to orchestrating enterprise solutions, always with
+          an eye for both technical excellence and business impact. When
+          I&apos;m not architecting systems, you&apos;ll find me mentoring
+          fellow developers or exploring the latest in tech innovation.
         </p>
 
         <div
@@ -100,14 +99,16 @@ export const About = () => {
               solutions
             </AnimatedListItem>
             <AnimatedListItem delay={600}>
-              Leading teams that don't just write code, but craft experiences
+              Leading teams that don&apos;t just write code, but craft
+              experiences
             </AnimatedListItem>
             <AnimatedListItem delay={700}>
-              Sharing knowledge and elevating the entire team's technical
+              Sharing knowledge and elevating the entire team&apos;s technical
               artistry
             </AnimatedListItem>
             <AnimatedListItem delay={800}>
-              Creating software that makes users forget they're using software
+              Creating software that makes users forget they&apos;re using
+              software
             </AnimatedListItem>
           </ul>
         </div>
@@ -121,13 +122,14 @@ export const About = () => {
           }}
         >
           <p>
-            Whether it's optimizing database queries or designing system
+            Whether it&apos;s optimizing database queries or designing system
             architectures, I believe in the perfect balance of innovation and
             reliability. Every line of code is an opportunity to make the
             digital world a bit more elegant, a bit more efficient, and a lot
             more impactful.
           </p>
         </div>
+
         <div
           className="mt-12 pt-8 border-t border-gray-100"
           style={{
