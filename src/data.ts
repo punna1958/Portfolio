@@ -1,165 +1,248 @@
-
 export const projects = [
   {
-    title: "QuickLearn",
-    description: "Developed an enterprise learning management system focused on employee roadmap tracking and progress management. Implemented dynamic roadmap visualization system, analytics dashboard for learning patterns, and custom assessment engine for user progress tracking. Built API integration system for seamless connection with learning content providers.",
-    link: "https://learn.quicklabs.in/",
-    tech: ["TypeScript", "Redux Toolkit", "Node.js", "NextJS", "NestJS", "Postgres"],
-    isOngoing: true
+    title: 'QuickLearn',
+    description:
+      "Crafted an LMS that turns boring corporate training into an engaging journey of discovery. Architected a dynamic roadmap system that feels like a skill tree in an RPG, making learning actually fun. Built an analytics dashboard that transforms raw data into storytelling, helping companies understand their teams' learning adventures.",
+    link: 'https://learn.quicklabs.in/',
+    tech: [
+      'TypeScript',
+      'Redux Toolkit',
+      'Node.js',
+      'NextJS',
+      'NestJS',
+      'Postgres',
+      'WebSockets',
+    ],
+    isOngoing: true,
   },
   {
-    title: "Atomic Forms",
-    description: "Architected a mission-critical web application bridging US Veterans with VA office for accurate claim form submission. Implemented complex multi-step form validation, intelligent form-filling system, and document management system with proper encryption. Built admin dashboard and integrated with VA office using web fax service Documo.",
-    link: "https://app.stg.atomicforms.io/",
-    tech: ["React", "FastAPI", "TypeScript", "Form Validation", "PDF Generation", "Encryption"],
-    isOngoing: true
+    title: 'Atomic Forms',
+    description:
+      "Created a digital bridge connecting US Veterans with VA services, because nobody should struggle with paperwork after serving their country. Engineered an intelligent form-filling system that's like having a helpful friend guide you through the process. Every line of code was written with empathy, ensuring veterans get the support they deserve.",
+    link: 'https://app.stg.atomicforms.io/',
+    tech: [
+      'React',
+      'FastAPI',
+      'TypeScript',
+      'Advanced Form Systems',
+      'PDF Engine',
+      'Enterprise Security',
+    ],
+    isOngoing: true,
   },
   {
-    title: "QuickTest",
-    description: "Engineered a bug tracking and project management system similar to Jira. Implemented real-time collaboration using WebSocket, custom dashboard with advanced filtering, and automated bug assignment system. Achieved 40% reduction in bug resolution time through streamlined workflow.",
-    link: "https://teams.quicklabs.in/",
-    tech: ["React", "TypeScript", "WebSocket", "Redux Toolkit", "Material UI", "REST APIs"],
-    year: 2024
+    title: 'QuickTest',
+    description:
+      'Reimagined bug tracking as a collaborative art form where developers, testers, and managers dance in perfect harmony. Built real-time collaboration features that make squashing bugs feel like a multiplayer game. The clean, intuitive interface turns the chaos of bug reports into a zen garden of organized tasks.',
+    link: 'https://teams.quicklabs.in/',
+    tech: [
+      'React',
+      'TypeScript',
+      'WebSocket',
+      'Redux Toolkit',
+      'ML Algorithms',
+      'Real-time Systems',
+    ],
+    year: 2024,
   },
   {
-    title: "DSider",
-    description: "Developed an AI-powered power simulation application for predicting success of diverse power plants and EV charging modules. Integrated Google Maps API and Highcharts, implemented user analytics modules for actionable insights in the energy sector.",
-    link: "https://www.dsider.app/",
-    tech: ["HighCharts", "Google Cloud Platform", "Role Based Analytics", "RTX Query"],
-    year: 2024
+    title: 'DSider',
+    description:
+      "Brought the future of energy planning to life with an AI-powered simulation platform that's more engaging than your favorite strategy game. Combined complex data visualization with intuitive design to make power grid planning actually enjoyable. Created interactive maps that tell the story of tomorrow's sustainable energy landscape.",
+    link: 'https://www.dsider.app/',
+    tech: [
+      'HighCharts',
+      'Google Cloud Platform',
+      'Advanced Analytics',
+      'RTK Query',
+      'Geospatial Analysis',
+    ],
+    year: 2024,
   },
   {
-    title: "DinDin",
-    description: "Orchestrated frontend development of online food ordering application using React and React Native. Integrated client-provided backend APIs with Redux Toolkit and implemented features like real-time updates and seamless navigation.",
-    link: "https://www.eatdindin.com/",
-    tech: ["Redux Toolkit", "React Native", "AsyncStorage", "Fast Image", "WebView"],
-    year: 2023
+    title: 'DinDin',
+    description:
+      "Cooked up a delightful food ordering experience that's as smooth as a well-plated dessert. Sprinkled performance optimizations throughout the app like secret ingredients, ensuring it runs smoother than a premium coffee blend. Every animation and interaction was crafted with the same care a chef puts into their signature dish.",
+    link: 'https://www.eatdindin.com/',
+    tech: [
+      'Redux Toolkit',
+      'React Native',
+      'Performance Optimization',
+      'Custom Image Pipeline',
+      'State Management',
+    ],
+    year: 2023,
   },
   {
-    title: "iAccess Analytics",
-    description: "Spearheaded development of tri-persona feedback, ratings, and suggestion management application. Implemented ultra-scalable code architecture using Next.js and delivered comprehensive solution within fixed-cost constraints.",
-    link: "https://www.iaccess.life/",
-    tech: ["ChartsJS", "NextJS", "Custom Feedback Forum Development"],
-    year: 2023
+    title: 'iAccess Analytics',
+    description:
+      'Designed a feedback system that turns user opinions into actionable insights, like a translator for user happiness. Created intuitive visualizations that make complex data feel like reading your favorite comic book. Built with scalability in mind, because good conversations should never hit a roadblock.',
+    link: 'https://www.iaccess.life/',
+    tech: [
+      'Next.js',
+      'Advanced Analytics',
+      'Real-time Processing',
+      'Custom Analytics Engine',
+    ],
+    year: 2023,
   },
   {
-    title: "ReEntry USA",
-    description: "Led architectural vision for US government project managing parole transition. Developed comprehensive system for managing drug tests, accommodation arrangements, and documentation with secure, scalable interface.",
-    link: "https://reentrycenters.org/",
-    tech: ["React 18", "Redux toolkit", "Google Maps Api", "WebView", "FastApi"],
-    year: 2022
+    title: 'ReEntry USA',
+    description:
+      'Developed a digital platform that humanizes the parole transition process, because everyone deserves a second chance with dignity. Created intuitive interfaces that guide users through complex processes with compassion. Every feature was built with empathy, ensuring technology serves humanity.',
+    link: 'https://reentrycenters.org/',
+    tech: [
+      'React 18',
+      'Redux Toolkit',
+      'Geospatial Integration',
+      'Privacy-First Architecture',
+      'FastAPI',
+    ],
+    year: 2022,
   },
   {
-    title: "Cars24 Refurb",
-    description: "Developed industrial-grade tool for Cars24's inspection team. Implemented real-time monitoring system and media management capabilities using Redux Toolkit and Tailwind CSS.",
-    link: "https://www.cars24.com/",
-    tech: ["Axios Interceptor", "Tailwind", "GraphQL", "Cracko"],
-    year: 2022
-  }
+    title: 'Cars24 Refurb',
+    description:
+      "Built an inspection system that turns vehicle assessment into a streamlined digital symphony. Crafted real-time synchronization that keeps teams in perfect harmony across locations. Designed media management that handles images and videos with the grace of a professional photographer's portfolio.",
+    link: 'https://www.cars24.com/',
+    tech: [
+      'Real-time Sync',
+      'GraphQL',
+      'Media Optimization',
+      'High-Performance Storage',
+    ],
+    year: 2022,
+  },
 ];
 
 export const experiences = [
   {
-    company: "Crownstack Technologies",
-    role: "Sr. Software Engineer",
-    period: "Feb 2024 - Present",
-    location: "Noida",
-    description: "Spearhead full-stack development using MERN stack, collaborating with cross-functional teams to design and implement scalable web applications. Focus on optimizing performance, ensuring code quality, and mentoring junior developers.",
-    companyUrl: "https://www.crownstack.com/",
-    linkedinUrl: "https://www.linkedin.com/company/crownstack/"
+    company: 'Crownstack Technologies',
+    role: 'Sr. Software Engineer',
+    period: 'Feb 2024 - Present',
+    location: 'Noida',
+    description:
+      "Orchestrating beautiful code symphonies while conducting multiple development teams. Known as the 'Code Whisperer' for turning business requirements into elegant technical solutions. Mentoring junior developers with the patience of a Zen master and the enthusiasm of a caffeine-powered rubber duck. Building bridges between technical possibilities and business dreams.",
+    companyUrl: 'https://www.crownstack.com/',
+    linkedinUrl: 'https://www.linkedin.com/company/crownstack/',
   },
   {
-    company: "Kiwitech LLC",
-    role: "Software Engineer: Web",
-    period: "April 2022 - Jan 2024",
-    location: "Noida",
-    description: "Led frontend development efforts on key projects, collaborating closely with cross-functional teams. Ensured alignment of frontend solutions with client goals and expectations.",
-    companyUrl: "https://www.kiwitech.com/",
-    linkedinUrl: "https://www.linkedin.com/company/kiwitech/"
+    company: 'Kiwitech LLC',
+    role: 'Software Engineer - Web',
+    period: 'April 2022 - Jan 2024',
+    location: 'Noida',
+    description:
+      "Evolved from writing code to crafting experiences, while helping others do the same. Became the go-to person for turning 'impossible' business requirements into 'it's live in production' realities. Established code review practices that feel like collaborative art sessions rather than tedious tasks. Made architectural decisions that even made the database smile.",
+    companyUrl: 'https://www.kiwitech.com/',
+    linkedinUrl: 'https://www.linkedin.com/company/kiwitech/',
   },
   {
-    company: "Cognizant",
-    role: "Program Analyst",
-    period: "Jan 2021 - Mar 2022",
-    location: "Bangalore",
-    description: "Worked with platforms like Shopify and Salesforce, implementing custom solutions and integrations. Developed comprehensive healthcare e-commerce solutions.",
-    companyUrl: "https://www.cognizant.com/in/en",
-    linkedinUrl: "https://www.linkedin.com/company/cognizant/"
+    company: 'Cognizant',
+    role: 'Program Analyst',
+    period: 'Jan 2021 - Mar 2022',
+    location: 'Bangalore',
+    description:
+      "Mastered the art of turning business requirements into digital experiences while making e-commerce platforms feel like magic. Collaborated across time zones with the enthusiasm of a morning person (fueled by coffee). Learned that the best code is written when you understand the 'why' behind the 'what'.",
+    companyUrl: 'https://www.cognizant.com/in/en',
+    linkedinUrl: 'https://www.linkedin.com/company/cognizant/',
   },
   {
-    company: "GTB Infotech",
-    role: "Intern",
-    period: "Sept 2020 - Dec 2020",
-    location: "Jalandhar",
-    description: "Interned as a Web Developer, gaining practical experience in Java, Python, HTML, CSS, and JavaScript. Participated in full software development lifecycle.",
-    companyUrl: "https://www.gtbinfotech.com/",
-    linkedinUrl: "https://www.linkedin.com/company/gtbinfotech/"
-  }
+    company: 'GTB Infotech',
+    role: 'Software Developer Intern',
+    period: 'Sept 2020 - Dec 2020',
+    location: 'Jalandhar',
+    description:
+      "Started the journey from 'Hello World' to 'World, I'm ready to make a difference!' Discovered that coding is an art form and debugging is like being a detective in a mystery novel. Learned that the best features come from understanding user stories, not just user requirements.",
+    companyUrl: 'https://www.gtbinfotech.com/',
+    linkedinUrl: 'https://www.linkedin.com/company/gtbinfotech/',
+  },
 ];
-
 
 export const skills = {
   programming: [
-    { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    { name: "TypeScript", url: "https://www.typescriptlang.org/docs/" },
-    { name: "Python", url: "https://docs.python.org/3/" },
-    { name: "SQL", url: "https://dev.mysql.com/doc/" }
+    {
+      name: 'JavaScript',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    { name: 'TypeScript', url: 'https://www.typescriptlang.org/docs/' },
+    { name: 'Python', url: 'https://docs.python.org/3/' },
+    { name: 'SQL', url: 'https://dev.mysql.com/doc/' },
   ],
   frontend: [
-    { name: "React.js", url: "https://react.dev/" },
-    { name: "Next.js", url: "https://nextjs.org/docs" },
-    { name: "Redux Toolkit", url: "https://redux-toolkit.js.org/" },
-    { name: "React Query", url: "https://tanstack.com/query/latest" },
-    { name: "React Native", url: "https://reactnative.dev/" },
-    { name: "HTML5", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-    { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-    { name: "Tailwind CSS", url: "https://tailwindcss.com/docs" },
-    { name: "Material UI", url: "https://mui.com/material-ui/" },
-    { name: "Bootstrap", url: "https://getbootstrap.com/docs/" },
-    { name: "SASS/SCSS", url: "https://sass-lang.com/documentation/" },
-    { name: "Styled Components", url: "https://styled-components.com/docs" },
-    { name: "WebSockets", url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" },
-    { name: "React Router", url: "https://reactrouter.com/" },
-    { name: "Axios", url: "https://axios-http.com/docs/intro" }
+    { name: 'React.js', url: 'https://react.dev/' },
+    { name: 'Next.js', url: 'https://nextjs.org/docs' },
+    { name: 'Redux Toolkit', url: 'https://redux-toolkit.js.org/' },
+    { name: 'React Query', url: 'https://tanstack.com/query/latest' },
+    { name: 'React Native', url: 'https://reactnative.dev/' },
+    {
+      name: 'Server Components',
+      url: 'https://react.dev/reference/react/Component',
+    },
+    { name: 'HTML5', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: 'CSS3', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    {
+      name: 'WebSockets',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/API/WebSocket',
+    },
+    { name: 'React Router', url: 'https://reactrouter.com/en/main' },
+  ],
+  styling: [
+    { name: 'Tailwind CSS', url: 'https://tailwindcss.com/docs' },
+    { name: 'Material UI', url: 'https://mui.com/material-ui/' },
+    { name: 'Styled Components', url: 'https://styled-components.com/docs' },
+    { name: 'SASS/SCSS', url: 'https://sass-lang.com/documentation/' },
+    { name: 'CSS-in-JS', url: 'https://cssinjs.org/' },
   ],
   backend: [
-    { name: "Node.js", url: "https://nodejs.org/docs/latest/api/" },
-    { name: "Express.js", url: "https://expressjs.com/" },
-    { name: "NestJS", url: "https://docs.nestjs.com/" },
-    { name: "PostgreSQL", url: "https://www.postgresql.org/docs/" },
-    { name: "MongoDB", url: "https://docs.mongodb.com/" },
-    { name: "Redis", url: "https://redis.io/docs/" },
-    { name: "REST APIs", url: "https://restfulapi.net/" },
-    { name: "GraphQL", url: "https://graphql.org/learn/" },
-    { name: "Prisma ORM", url: "https://www.prisma.io/docs" },
-    { name: "TypeORM", url: "https://typeorm.io/" },
-    { name: "Socket.io", url: "https://socket.io/docs/v4/" },
-    { name: "FastAPI", url: "https://fastapi.tiangolo.com/" }
+    { name: 'Node.js', url: 'https://nodejs.org/docs/latest/api/' },
+    { name: 'NestJS', url: 'https://docs.nestjs.com/' },
+    { name: 'FastAPI', url: 'https://fastapi.tiangolo.com/' },
+    { name: 'Express.js', url: 'https://expressjs.com/' },
+    { name: 'Socket.io', url: 'https://socket.io/docs/v4/' },
+    { name: 'GraphQL', url: 'https://graphql.org/learn/' },
+    { name: 'REST APIs', url: 'https://restfulapi.net/' },
+    { name: 'Microservices', url: 'https://microservices.io/' },
   ],
-  tools: [
-    { name: "Git", url: "https://git-scm.com/doc" },
-    { name: "GitHub", url: "https://docs.github.com/" },
-    { name: "GitLab", url: "https://docs.gitlab.com/" },
-    { name: "Bitbucket", url: "https://bitbucket.org/product/guides" },
-    { name: "VS Code", url: "https://code.visualstudio.com/docs" },
-    { name: "IntelliJ IDEA", url: "https://www.jetbrains.com/idea/documentation/" },
-    { name: "npm", url: "https://docs.npmjs.com/" },
-    { name: "Yarn", url: "https://yarnpkg.com/getting-started" },
-    { name: "Webpack", url: "https://webpack.js.org/concepts/" },
-    { name: "Auth0", url: "https://auth0.com/docs/" },
-    { name: "Firebase", url: "https://firebase.google.com/docs" },
-    { name: "Docker", url: "https://docs.docker.com/" },
-    { name: "Postman", url: "https://learning.postman.com/docs/" }
+  database: [
+    { name: 'PostgreSQL', url: 'https://www.postgresql.org/docs/' },
+    { name: 'MongoDB', url: 'https://docs.mongodb.com/' },
+    { name: 'Redis', url: 'https://redis.io/docs/' },
+    { name: 'Prisma', url: 'https://www.prisma.io/docs' },
+    { name: 'TypeORM', url: 'https://typeorm.io/' },
   ],
-  cloud: [
-    { name: "AWS", url: "https://docs.aws.amazon.com/" },
-    { name: "Google Cloud Platform", url: "https://cloud.google.com/docs" },
-    { name: "Vercel", url: "https://vercel.com/docs" },
-    { name: "Netlify", url: "https://docs.netlify.com/" }
+  deployment: [
+    { name: 'Docker', url: 'https://docs.docker.com/' },
+    { name: 'AWS', url: 'https://docs.aws.amazon.com/' },
+    { name: 'GCP', url: 'https://cloud.google.com/docs' },
+    { name: 'Vercel', url: 'https://vercel.com/docs' },
+    { name: 'Netlify', url: 'https://docs.netlify.com/' },
+    { name: 'CI/CD', url: 'https://about.gitlab.com/topics/ci-cd/' },
+    { name: 'Kubernetes', url: 'https://kubernetes.io/docs/home/' },
   ],
   testing: [
-    { name: "Jest", url: "https://jestjs.io/docs/getting-started" },
-    { name: "React Testing Library", url: "https://testing-library.com/docs/react-testing-library/intro/" },
-    { name: "Cypress", url: "https://docs.cypress.io/" }
-  ]
+    { name: 'Jest', url: 'https://jestjs.io/docs/getting-started' },
+    {
+      name: 'RTL',
+      url: 'https://testing-library.com/docs/react-testing-library/intro/',
+    },
+    { name: 'Cypress', url: 'https://docs.cypress.io/' },
+    { name: 'TDD', url: 'https://www.agilealliance.org/glossary/tdd/' },
+  ],
+  architecture: [
+    {
+      name: 'System Design',
+      url: 'https://github.com/donnemartin/system-design-primer',
+    },
+    {
+      name: 'Design Patterns',
+      url: 'https://refactoring.guru/design-patterns',
+    },
+    { name: 'Clean Code', url: 'https://www.clean-code-developer.com/' },
+    { name: 'DDD', url: 'https://domainlanguage.com/ddd/' },
+    {
+      name: 'Event-Driven',
+      url: 'https://microservices.io/patterns/data/event-driven-architecture.html',
+    },
+    { name: 'API Design', url: 'https://swagger.io/specification/' },
+  ],
 };

@@ -12,10 +12,11 @@ export const Hero = () => {
   return (
     <header className="relative bg-background overflow-hidden">
       {/* Animated gradient background */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
-          background: 'linear-gradient(45deg, #0b1442, #06001f, #1a237e, #0b1442)',
+          background:
+            'linear-gradient(45deg, #0b1442, #06001f, #1a237e, #0b1442)',
           backgroundSize: '400% 400%',
           animation: 'gradient 15s ease infinite',
         }}
@@ -48,19 +49,24 @@ export const Hero = () => {
       <div className="relative z-10 max-w-3xl mx-auto px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Profile Image Container */}
-          <div className={`
+          <div
+            className={`
             inline-block mb-8 
             transform transition-all duration-700 ease-out
-            ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
-          `}>
-            <div className={`
+            ${
+              isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }
+          `}
+          >
+            <div
+              className={`
               w-48 h-48 rounded-full overflow-hidden border-2 border-foreground
               transform transition-all duration-1000 delay-500
               ${isLoaded ? 'scale-100 rotate-0' : 'scale-95 rotate-6'}
             `}
-            style={{
-              animation: 'breathe 3s ease-in-out infinite'
-            }}
+              style={{
+                animation: 'breathe 3s ease-in-out infinite',
+              }}
             >
               <div className="relative w-full h-full">
                 <Image
@@ -79,12 +85,16 @@ export const Hero = () => {
           </div>
 
           {/* Rest of the component remains the same */}
-          <div className={`
+          <div
+            className={`
             flex items-center justify-center gap-2
             transform transition-all duration-700 delay-200
-            ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
-          `}>
-            <a 
+            ${
+              isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }
+          `}
+          >
+            <a
               href="https://www.linkedin.com/in/snehdeep-singh/"
               target="_blank"
               rel="noopener noreferrer"
@@ -97,48 +107,58 @@ export const Hero = () => {
             </a>
           </div>
 
-          <p className={`
-            mt-4 text-xl text-foreground/80 font-medium
-            transform transition-all duration-700 delay-300
-            ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
-          `}>
-            Senior Full Stack Engineer
+          <p
+            className={`
+                      mt-4 text-xl text-foreground/80 font-medium
+                      transform transition-all duration-700 delay-300
+                      ${
+                        isLoaded
+                          ? 'translate-y-0 opacity-100'
+                          : 'translate-y-4 opacity-0'
+                      }
+                    `}
+          >
+            Digital Architect • Code Artist • Problem Solver
           </p>
 
           {/* Contact Links */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 px-4">
             {[
               {
-                href: "mailto:singhsnehdeep99@gmail.com",
+                href: 'mailto:singhsnehdeep99@gmail.com',
                 icon: Mail,
-                text: "singhsnehdeep99@gmail.com",
+                text: 'singhsnehdeep99@gmail.com',
                 delay: 400,
               },
               {
-                href: "tel:+917009928716",
+                href: 'tel:+917009928716',
                 icon: Phone,
-                text: "+91 7009928716",
+                text: '+91 7009928716',
                 delay: 500,
               },
               {
-                href: "https://github.com/Snehdeep-ts",
+                href: 'https://github.com/Snehdeep-ts',
                 icon: Github,
-                text: "Snehdeep-ts",
+                text: 'Snehdeep-ts',
                 delay: 600,
                 isExternal: true,
               },
             ].map(({ href, icon: Icon, text, delay, isExternal }) => (
-              <a 
+              <a
                 key={href}
                 href={href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
                 className={`
                   text-foreground/80 hover:text-foreground 
                   flex items-center gap-2 w-full sm:w-auto justify-center 
                   transition-all duration-700
                   transform
-                  ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
+                  ${
+                    isLoaded
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }
                 `}
                 style={{ transitionDelay: `${delay}ms` }}
               >

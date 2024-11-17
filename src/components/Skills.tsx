@@ -9,10 +9,12 @@ interface Skill {
 interface SkillsData {
   programming: Skill[];
   frontend: Skill[];
+  styling: Skill[];
   backend: Skill[];
-  tools: Skill[];
-  cloud: Skill[];
+  database: Skill[];
+  deployment: Skill[];
   testing: Skill[];
+  architecture: Skill[];
 }
 
 interface SkillsProps {
@@ -41,15 +43,8 @@ const SkillCategory = ({ title, skills, delay }: SkillCategoryProps) => {
         transitionDelay: `${delay}ms`
       }}
     >
-      <h3 className="text-xl font-semibold text-gray-900 mb-4 relative inline-block">
+      <h3 className="text-xl font-semibold mb-4 text-[#0b1442]/90">
         {title}
-        <span 
-          className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500 transform origin-left transition-transform duration-500"
-          style={{
-            transform: isInView ? 'scaleX(1)' : 'scaleX(0)',
-            transitionDelay: `${delay + 200}ms`
-          }}
-        />
       </h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
@@ -66,16 +61,16 @@ const SkillCategory = ({ title, skills, delay }: SkillCategoryProps) => {
             }}
           >
             <span className="relative z-10 flex items-center gap-1">
-              {skill.name}
+              <span className="relative">
+                {skill.name}
+                <span className="absolute left-0 -bottom-px w-full h-px bg-gray-800 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </span>
               <span 
                 className="text-xs text-gray-400 transform transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 ↗
               </span>
             </span>
-            
-            {/* Hover effect background */}
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             
             {/* Border gradient */}
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200 to-indigo-200 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ padding: '1px' }}>
@@ -108,29 +103,24 @@ export const SkillsSection = ({ skills }: SkillsProps) => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <h2 
-          className="text-3xl font-bold text-gray-900 mb-12 relative inline-block"
+          className="text-3xl font-bold text-[#0b1442]/90 mb-12"
           style={{
             opacity: isInView ? 1 : 0,
             transform: isInView ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 0.7s ease-out'
           }}
         >
-          Skills
-          <span 
-            className="absolute left-0 -bottom-2 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform origin-left transition-transform duration-700"
-            style={{
-              transform: isInView ? 'scaleX(1)' : 'scaleX(0)',
-              transitionDelay: '200ms'
-            }}
-          />
+          Skills & Expertise
         </h2>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
           <SkillCategory title="Programming Languages" skills={skills.programming} delay={0} />
           <SkillCategory title="Frontend Development" skills={skills.frontend} delay={100} />
-          <SkillCategory title="Backend Development" skills={skills.backend} delay={200} />
-          <SkillCategory title="Development Tools" skills={skills.tools} delay={300} />
-          <SkillCategory title="Cloud & Deployment" skills={skills.cloud} delay={400} />
-          <SkillCategory title="Testing" skills={skills.testing} delay={500} />
+          <SkillCategory title="Design & Styling" skills={skills.styling} delay={200} />
+          <SkillCategory title="Backend Development" skills={skills.backend} delay={300} />
+          <SkillCategory title="Database & Storage" skills={skills.database} delay={400} />
+          <SkillCategory title="Cloud & DevOps" skills={skills.deployment} delay={500} />
+          <SkillCategory title="Testing & Quality" skills={skills.testing} delay={600} />
+          <SkillCategory title="Architecture & Patterns" skills={skills.architecture} delay={700} />
         </div>
       </div>
     </section>
