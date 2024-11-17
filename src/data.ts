@@ -1,3 +1,5 @@
+import { Car, Bike, Music, Radio, Rocket, Film } from 'lucide-react';
+
 export const projects = [
   {
     title: 'QuickLearn',
@@ -246,3 +248,42 @@ export const skills = {
     { name: 'API Design', url: 'https://swagger.io/specification/' },
   ],
 };
+
+export const interests = [
+  {
+    icon: Car,
+    title: 'Speed & Style',
+    description:
+      "From Italian supercars to Japanese classics, anything that screams performance gets my heart racing. Because life's better when you're chasing that perfect drive.",
+  },
+  {
+    icon: Bike,
+    title: 'Track Day Dreams',
+    description:
+      'S1000RR on the wishlist and adrenaline in my veins. When two wheels and a thousand CCs meet, magic happens. Weekend rider plotting track day adventures.',
+  },
+  {
+    icon: Music,
+    title: 'Desi Hip Hop',
+    description:
+      "Vibing to the evolution of our street sound. From Young Stunners' poetry to Seedhe Maut's wordplay, watching our culture paint stories through bars and beats.",
+  },
+  {
+    icon: Radio,
+    title: 'Podcast Explorer',
+    description:
+      "From spine-chilling ghost stories to mind-bending evolution theories, ancient history to future tech. If it makes you think, question, or wonder - I'm tuning in.",
+  },
+  {
+    icon: Rocket,
+    title: 'Future Fanatic',
+    description:
+      'Deep diving into quantum computing possibilities, exploring AI breakthroughs, and probably nerding out about large language models right now. The geekier, the better!',
+  },
+  {
+    icon: Film,
+    title: 'Plots & Portals',
+    description:
+      "From Naruto's ninja way to Avengers' endgame, Shelby's schemes to Sherlock's deductions - diving into stories that bend reality and boggle minds. Always up for a theory chat!",
+  },
+];

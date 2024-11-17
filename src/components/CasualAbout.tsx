@@ -1,59 +1,8 @@
 import { useInView } from '@/hooks/useInView';
-import {
-  Car,
-  Bike,
-  Music,
-  Radio,
-  Rocket,
-  Headphones,
-  LucideIcon,
-} from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { MeteorShower } from './UI/MeteorShower';
-
-interface InterestCardProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  delay: number;
-}
-
-const InterestCard = ({
-  icon: Icon,
-  title,
-  description,
-  delay,
-}: InterestCardProps) => {
-  const [ref, isInView] = useInView({
-    threshold: 0.2,
-    rootMargin: '50px 0px',
-  });
-
-  return (
-    <div
-      ref={ref}
-      className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 group"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: `${isInView ? 'translateY(0)' : 'translateY(20px)'}`,
-        transition: `all 700ms ease-out ${delay}ms`,
-      }}
-    >
-      <div className="flex items-start gap-4">
-        <div className="p-2 bg-indigo-500/10 rounded-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:bg-indigo-500/20">
-          <Icon className="h-5 w-5 text-indigo-400" />
-        </div>
-        <div>
-          <h3 className="font-semibold text-slate-200 mb-1 group-hover:text-indigo-400 transition-colors duration-300">
-            {title}
-          </h3>
-          <p className="text-slate-400 text-sm leading-relaxed">
-            {description}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+import InterestCard from './UI/InterestCard';
+import { interests } from '@/data';
 
 export const CasualAbout = () => {
   const [sectionRef, isSectionInView] = useInView({
@@ -112,7 +61,6 @@ export const CasualAbout = () => {
         >
           Beyond the Code
         </h2>
-
         <p
           className="text-lg text-slate-400 mb-12"
           style={{
@@ -124,49 +72,47 @@ export const CasualAbout = () => {
           When I&apos;m not crafting code, you&apos;ll find me exploring tech,
           roads, and rhythms...
         </p>
-
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <InterestCard
-            icon={Car}
-            title="Car Enthusiast"
-            description="Love being behind the wheel, exploring new routes, and experiencing the thrill of driving. Every journey is an adventure waiting to unfold."
-            delay={200}
+          {interests.map((interest, index) => (
+            <InterestCard
+              key={interest.title}
+              icon={interest.icon}
+              title={interest.title}
+              description={interest.description}
+              delay={(index + 2) * 100}
+            />
+          ))}
+        </div>
+        <div
+          className="mt-16 text-center"
+          style={{
+            opacity: isSectionInView ? 1 : 0,
+            transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 700ms ease-out 800ms',
+          }}
+        >
+          <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;500&display=swap"
+            rel="stylesheet"
           />
 
-          <InterestCard
-            icon={Bike}
-            title="Bike Life"
-            description="Two wheels or four, the passion for riding runs deep. There's nothing quite like the freedom of cruising on a bike."
-            delay={300}
-          />
-
-          <InterestCard
-            icon={Music}
-            title="Desi Hip Hop"
-            description="Passionate about the evolving Desi Hip Hop scene. Love how it blends cultural elements with modern beats and meaningful lyrics."
-            delay={400}
-          />
-
-          <InterestCard
-            icon={Radio}
-            title="Podcast Explorer"
-            description="Always tuned into tech and innovation podcasts. Love staying updated with the latest trends and deep diving into new concepts."
-            delay={500}
-          />
-
-          <InterestCard
-            icon={Rocket}
-            title="Tech Enthusiast"
-            description="Constantly exploring technological advancements. From AI to quantum computing, I'm always eager to learn and understand what's next in tech."
-            delay={600}
-          />
-
-          <InterestCard
-            icon={Headphones}
-            title="Music on the Go"
-            description="Perfect drives are paired with great music. Creating memories on the road with the best beats playing in the background."
-            delay={700}
-          />
+          <p className="text-slate-300 font-urbanist">
+            <span className="block text-base tracking-wide text-slate-400 mb-2">
+              Found something that clicks?
+            </span>
+            <span className="text-lg tracking-wide">
+              Lets geek out about it on{' '}
+              <a
+                href="https://instagram.com/essdees"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-slate-200 hover:text-slate-50 transition-all duration-300 hover:-translate-y-0.5 font-medium"
+              >
+                <Instagram className="w-4 h-4" />
+                <span>@essdees</span>
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </section>
