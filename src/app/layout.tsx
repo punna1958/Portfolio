@@ -49,13 +49,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://snehdeepsingh.com'),
+  metadataBase: new URL('https://madewithsneh.com'),
   title: {
-    default: 'Snehdeep Singh | Digital Architect & Code Craftsman',
+    default: 'Snehdeep Singh | Digital Architect & Code Artist',
     template: '%s | Snehdeep Singh',
   },
   description:
-    'Software architect transforming complex challenges into elegant digital solutions. Specializing in scalable web applications, intuitive user experiences, and enterprise-level architectures.',
+    'Digital Architect and Code Artist transforming complex challenges into elegant digital solutions. Specializing in scalable web applications and intuitive user experiences.',
   icons: {
     icon: [
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
@@ -78,21 +78,21 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   keywords: [
-    'Software Architect',
-    'Full Stack Engineer',
+    'Digital Architect',
+    'Code Artist',
+    'Full Stack Developer',
     'React Developer',
-    'Node.js Expert',
-    'TypeScript',
-    'System Design',
-    'Web Architecture',
-    'Cloud Solutions',
-    'Enterprise Solutions',
+    'Node.js Developer',
+    'TypeScript Expert',
+    'Web Development',
+    'UI/UX Engineering',
     'JavaScript Ecosystem',
     'Performance Optimization',
-    'Technical Leadership',
-    'Code Craftsmanship',
-    'UI/UX Engineering',
+    'Cloud Solutions',
+    'System Design',
     'Database Architecture',
+    'Code Craftsmanship',
+    'Technical Leadership',
   ],
   authors: [
     {
@@ -104,25 +104,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://snehdeepsingh.com',
-    title: 'Snehdeep Singh | Digital Architect & Code Craftsman',
+    url: 'https://madewithsneh.com',
+    title: 'Snehdeep Singh | Digital Architect & Code Artist',
     description:
-      'Crafting elegant digital solutions through innovative architecture and clean code. Transforming complex challenges into seamless user experiences.',
+      'Digital Architect and Code Artist crafting elegant solutions through innovative development and clean code.',
     siteName: 'Snehdeep Singh',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Snehdeep Singh - Digital Architect & Code Craftsman',
+        alt: 'Snehdeep Singh - Digital Architect & Code Artist',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Snehdeep Singh | Digital Architect & Code Craftsman',
+    title: 'Snehdeep Singh | Digital Architect & Code Artist',
     description:
-      "Crafting elegant digital solutions through innovative architecture and clean code. Building tomorrow's web, one line at a time.",
+      'Digital Architect and Code Artist crafting elegant solutions through innovative development and clean code.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -135,9 +135,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code', // Add if you have one
   },
 };
 
