@@ -25,7 +25,7 @@ export async function GET(req: NextRequest, { params }: { params: Params }) {
       },
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: 'Post not found' }), {
+    return new Response(JSON.stringify({ error }), {
       status: 404,
       headers: {
         'content-type': 'application/json',
