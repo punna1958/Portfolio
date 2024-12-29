@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: Snehdeep-ts/portfolio
+  branch: main
+
+media_folder: 'public/images'
+public_folder: '/images'
+local_backend: true
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'posts'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options: ['Tech', 'Development'],
+        }
+      - { label: 'Labels', name: 'labels', widget: 'list', allow_add: true }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
