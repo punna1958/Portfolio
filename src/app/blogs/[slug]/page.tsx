@@ -4,13 +4,12 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
 
-// Update the props interface
-interface Params {
-  slug: string;
-}
-
 // Use the correct Next.js page props type
-export default async function BlogPost({ params }: { params: Params }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const markdownWithMeta = fs.readFileSync(
     path.join('posts', `${params.slug}.md`),
     'utf-8'
