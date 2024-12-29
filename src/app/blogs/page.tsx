@@ -14,7 +14,7 @@ interface Post {
   };
 }
 
-async function getPosts() {
+async function getPosts(): Promise<Post[]> {
   const files = fs.readdirSync(path.join('posts'));
 
   const posts = files.map((filename) => {
@@ -23,7 +23,9 @@ async function getPosts() {
       path.join('posts', filename),
       'utf-8'
     );
-    const { data: frontmatter } = matter(markdownWithMeta);
+    const { data: frontmatter } = matter(markdownWithMeta) as unknown as {
+      data: Post['frontmatter'];
+    };
     return { slug, frontmatter };
   });
 
