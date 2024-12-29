@@ -4,37 +4,20 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
 
-interface BlogPostProps {
-  params: {
-    slug: string;
-  };
+// Update the props interface
+interface Params {
+  slug: string;
 }
 
-async function getPost(slug: string) {
+// Use the correct Next.js page props type
+export default async function BlogPost({ params }: { params: Params }) {
   const markdownWithMeta = fs.readFileSync(
-    path.join('posts', `${slug}.md`),
+    path.join('posts', `${params.slug}.md`),
     'utf-8'
   );
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
   const htmlContent = marked(content);
-
-  return {
-    frontmatter,
-    content: htmlContent,
-  };
-}
-
-export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join('posts'));
-
-  return files.map((filename) => ({
-    slug: filename.replace('.md', ''),
-  }));
-}
-
-export default async function BlogPost({ params }: BlogPostProps) {
-  const { frontmatter, content } = await getPost(params.slug);
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
@@ -66,8 +49,16 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
       <div
         className="prose lg:prose-xl max-w-none"
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  const files = fs.readdirSync(path.join('posts'));
+
+  return files.map((filename) => ({
+    slug: filename.replace('.md', ''),
+  }));
 }
