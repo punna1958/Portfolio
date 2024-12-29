@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Snehdeep-ts/portfolio
   branch: main
-  base_url: window.location.origin
+  base_url: https://www.madewithsneh.com
   auth_endpoint: api/auth
 
 media_folder: 'public/images'
