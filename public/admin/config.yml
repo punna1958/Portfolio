@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
+  site_id: 0fe9a3ea-d286-4246-8b42-687a2a883078
 
 media_folder: 'public/images'
 public_folder: '/images'
