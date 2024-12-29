@@ -25,9 +25,8 @@ export default async function handler(req, res) {
       code,
       redirect_uri: `${baseUrl}/api/callback`,
     });
-
     res.redirect('/admin/#access_token=' + accessToken.token.access_token);
-  } catch (error) {
+  } catch {
     res.status(500).json('Authentication failed');
   }
 }
