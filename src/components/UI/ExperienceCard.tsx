@@ -26,7 +26,7 @@ const ExperienceCard = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isModalCompany =
-    exp.company === 'Crownstack Technologies' || exp.company === 'Kiwitech LLC';
+    exp.company === 'Crownstack Technologies';
 
   const handleCardClick = () => {
     if (isModalCompany) {
@@ -57,7 +57,7 @@ const ExperienceCard = ({
 
         {/* Date Bubble - Hidden on mobile, visible on desktop */}
         <div
-          className={`hidden sm:flex absolute -left-28 top-7 items-center gap-2 text-sm text-foreground/60 transition-all duration-500 delay-200 ${
+          className={`hidden sm:flex absolute -left-36 top-7 items-center gap-2 text-sm text-foreground/60 transition-all duration-500 delay-200 ${
             isCardInView
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 -translate-x-4'
@@ -65,7 +65,7 @@ const ExperienceCard = ({
         >
           <Calendar className="h-4 w-4" />
           <span className="font-medium whitespace-nowrap">
-            {exp.period.split('-')[0]}
+            {exp.period.split('-')[0].trim()}
           </span>
         </div>
 

@@ -91,11 +91,7 @@ export const Languages = () => {
             proficiency="Native" 
             delay={300}
           />
-          <LanguageCard 
-            language="Punjabi" 
-            proficiency="Native" 
-            delay={400}
-          />
+         
         </div>
       </div>
     </section>

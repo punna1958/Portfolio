@@ -36,6 +36,7 @@ export const About = () => {
 
   return (
     <section
+      id="about"
       className="py-16 bg-white relative overflow-hidden"
       ref={sectionRef}
     >
@@ -70,12 +71,7 @@ export const About = () => {
             transition: 'all 700ms ease-out 100ms',
           }}
         >
-          I&apos;m a software architect who believes in crafting digital
-          experiences that make a difference. My journey spans from writing
-          elegant algorithms to orchestrating enterprise solutions, always with
-          an eye for both technical excellence and business impact. When
-          I&apos;m not architecting systems, you&apos;ll find me mentoring
-          fellow developers or exploring the latest in tech innovation.
+          I&apos;m a Software Development Engineer in Test (SDET) who believes in building quality into every line of code. My journey spans from manual testing to crafting sophisticated automation frameworks, always with an eye for both technical excellence and business impact. When I&apos;m not designing test strategies, you&apos;ll find me mentoring fellow QA engineers or exploring the latest in testing innovation.
         </p>
 
         <div
@@ -91,24 +87,19 @@ export const About = () => {
           </h3>
           <ul className="space-y-3">
             <AnimatedListItem delay={200}>
-              Building systems that scale with elegance and perform with
-              precision
+              Building robust test frameworks that ensure software quality from day one.
             </AnimatedListItem>
             <AnimatedListItem delay={250}>
-              Transforming complex business challenges into intuitive technical
-              solutions
+              Transforming complex business requirements into comprehensive test strategies.
             </AnimatedListItem>
             <AnimatedListItem delay={300}>
-              Leading teams that don&apos;t just write code, but craft
-              experiences
+              Leading QA teams that don&apos;t just find bugs, but prevent them.
             </AnimatedListItem>
             <AnimatedListItem delay={350}>
-              Sharing knowledge and elevating the entire team&apos;s technical
-              artistry
+              Sharing testing knowledge and elevating the entire team&apos;s quality mindset.
             </AnimatedListItem>
             <AnimatedListItem delay={400}>
-              Creating software that makes users forget they&apos;re using
-              software
+              Creating test automation that makes quality assurance seamless and efficient.
             </AnimatedListItem>
           </ul>
         </div>
@@ -122,11 +113,10 @@ export const About = () => {
           }}
         >
           <p>
-            Whether it&apos;s optimizing database queries or designing system
-            architectures, I believe in the perfect balance of innovation and
-            reliability. Every line of code is an opportunity to make the
-            digital world a bit more elegant, a bit more efficient, and a lot
-            more impactful.
+            Whether it&apos;s optimizing existing test suites or designing new automation frameworks, I believe in the perfect balance of innovation and
+            reliability. Every test case is an opportunity to make the
+            digital world a bit more stable, a bit more user-friendly and a lot
+            more trustworthy.
           </p>
         </div>
 
@@ -139,19 +129,19 @@ export const About = () => {
           }}
         >
           <p className="text-gray-600 flex items-center gap-2">
-            For a more formal introduction, check out my résumé:
+            For a more formal introduction, check out my resume:
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-gray-900 hover:text-blue-600 font-medium transition-colors duration-200"
-            >
-              <FileText className="w-4 h-4" />
-              <span className="relative">
-                View Résumé
-                <span className="absolute left-0 right-0 bottom-0 h-px bg-current scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              </span>
-            </a>
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 text-gray-900 hover:text-blue-600 font-medium transition-colors duration-200"
+>
+  <FileText className="w-4 h-4" />
+  <span className="relative">
+    View Resume
+    <span className="absolute left-0 right-0 bottom-0 h-px bg-current scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+  </span>
+</a>
           </p>
         </div>
       </div>

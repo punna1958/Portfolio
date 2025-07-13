@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Project } from '@/types';
-import { ExternalLink, Link } from 'lucide-react';
+import { Link } from 'lucide-react';
 import Modal from './Modal';
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -12,16 +12,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Projects that should open in new tab instead of modal
-  const externalProjects = ['QuickTest', 'DinDin', 'ReEntry USA'];
-  const shouldOpenExternally = externalProjects.includes(project.title);
+  // All projects should open in modal first
+  const shouldOpenExternally = false;
 
   const handleClick = () => {
-    if (shouldOpenExternally) {
-      window.open(project.link, '_blank', 'noopener,noreferrer');
-    } else {
-      setIsModalOpen(true);
-    }
+    setIsModalOpen(true);
   };
 
   return (
@@ -48,11 +43,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               className="text-gray-400 hover:text-blue-600 transition-colors duration-150 shrink-0 ml-4"
               onClick={(e) => e.stopPropagation()}
             >
-              {shouldOpenExternally ? (
-                <ExternalLink className="h-5 w-5" />
-              ) : (
-                <Link className="h-5 w-5" />
-              )}
+              <Link className="h-5 w-5" />
             </a>
           </div>
           <p className="mt-2 text-gray-600 flex-grow">{project.description}</p>
@@ -79,20 +70,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
 
       {/* Modal */}
-      {!shouldOpenExternally && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title={project.title}
-          url={project.link}
-        >
-          <iframe
-            src={project.link}
-            className="w-full h-full border-none"
-            title={`${project.title} website`}
-          />
-        </Modal>
-      )}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={project.title}
+        url={project.link}
+      >
+        <iframe
+          src={project.link}
+          className="w-full h-full border-none"
+          title={`${project.title} website`}
+        />
+      </Modal>
     </>
   );
 };

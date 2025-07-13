@@ -7,7 +7,7 @@ export const Education = () => {
   });
 
   return (
-    <section className="py-16 bg-white" ref={sectionRef}>
+    <section id="education" className="py-16 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 
           className="text-3xl font-bold text-gray-900 mb-8"
@@ -43,7 +43,7 @@ export const Education = () => {
               transition: 'all 700ms ease-out 400ms',
             }}
           >
-            B.Tech. in Computer Science and Engineering
+            Bachelor of Computer Applications
           </h3>
           <p 
             className="text-gray-600 mt-1"
@@ -53,7 +53,7 @@ export const Education = () => {
               transition: 'all 700ms ease-out 500ms',
             }}
           >
-            SRM University
+            IGNOU
           </p>
           <p 
             className="text-gray-500 mt-1"
@@ -63,7 +63,7 @@ export const Education = () => {
               transition: 'all 700ms ease-out 600ms',
             }}
           >
-            July 2017 - June 2021
+            July 2015 - June 2018
           </p>
         </div>
       </div>

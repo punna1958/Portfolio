@@ -4,12 +4,12 @@ export const projects = [
   {
     title: 'QuickLearn',
     description:
-      "Crafted an LMS that turns boring corporate training into an engaging journey of discovery. Architected a dynamic roadmap system that feels like a skill tree in an RPG, making learning actually fun. Built an analytics dashboard that transforms raw data into storytelling, helping companies understand their teams' learning adventures.",
+      "Engineered comprehensive test automation for an LMS platform that transforms corporate training experiences. Designed and implemented end-to-end test suites using Cypress and TypeScript, ensuring seamless user journeys across complex learning pathways. Built robust testing frameworks for real-time analytics and interactive features, maintaining 99.9% reliability while enabling rapid feature development.",
     link: 'https://learn.quicklabs.in/',
     tech: [
       'TypeScript',
-      'Redux Toolkit',
-      'Node.js',
+      'Cypress',
+      'Manual Testing',
       'NextJS',
       'NestJS',
       'Postgres',
@@ -18,145 +18,102 @@ export const projects = [
     isOngoing: true,
   },
   {
-    title: 'Atomic Forms',
+    title: 'MDLand',
     description:
-      "Created a digital bridge connecting US Veterans with VA services, because nobody should struggle with paperwork after serving their country. Engineered an intelligent form-filling system that's like having a helpful friend guide you through the process. Every line of code was written with empathy, ensuring veterans get the support they deserve.",
-    link: 'https://app.stg.atomicforms.io/',
+      "Led quality assurance for a critical healthcare platform connecting providers and patients through iClinic and iPopHealth. Implemented comprehensive testing strategies using Katalon Studio and Rainforest QA, ensuring HIPAA compliance and zero-downtime patient data management. Designed test automation frameworks for complex healthcare workflows, maintaining 99.99% uptime for life-critical systems while enabling rapid feature deployment.",
+    link: 'https://mdland.com/',
     tech: [
-      'React',
-      'FastAPI',
+      'Katalon Studio',
+      'Rainforest QA',
+      'TestRails',
+      'Kafka',
+      'MongoDB',
+      'TestRails',
+    ],
+    isOngoing: false,
+  },
+  {
+    title: 'Trajector - OutreachLegal',
+    description:
+    'Architected quality assurance for a platform connecting US Veterans with VA services, ensuring no veteran struggles with digital paperwork. Implemented advanced test automation using Playwright and TypeScript, validating complex form-filling algorithms and ML-powered assistance features. Built comprehensive testing pipelines that guarantee accessibility compliance and seamless user experiences for veterans navigating critical services.',
+    link: 'https://www.trajector.com/',
+    tech: [
+      'Playwright',
       'TypeScript',
-      'Advanced Form Systems',
-      'PDF Engine',
-      'Enterprise Security',
+      'TestRails',
+      'Aha!',
+      'ML Algorithms',
+      'Real-time Systems',
     ],
     isOngoing: true,
   },
   {
-    title: 'QuickTest',
+    title: 'QubeMoney',
     description:
-      'Reimagined bug tracking as a collaborative art form where developers, testers, and managers dance in perfect harmony. Built real-time collaboration features that make squashing bugs feel like a multiplayer game. The clean, intuitive interface turns the chaos of bug reports into a zen garden of organized tasks.',
-    link: 'https://teams.quicklabs.in/',
+      "Spearheaded comprehensive quality assurance for a fintech platform empowering individuals to achieve financial freedom through QubeMoney. Designed and executed cross-platform testing strategies using Playwright for web and native mobile testing for iOS/Android, ensuring PCI compliance and secure financial transactions. Implemented advanced monitoring with DataDog and requirement analysis processes, maintaining 99.9% uptime for critical financial operations.",
+    link: 'https://qubemoney.com/',
     tech: [
-      'React',
-      'TypeScript',
-      'WebSocket',
-      'Redux Toolkit',
-      'ML Algorithms',
-      'Real-time Systems',
+      'JIRA',
+      'Playwright',
+      'DataDog',
+      'JavaScript',
+      'Postgres',
+      'Requirement Analysis',
+      'Android Testing',
+      'IOS Testing',
     ],
-    year: 2024,
+    isOngoing: true,
   },
   {
-    title: 'DSider',
+    title: 'E-commerce (Pharmacy)',
     description:
-      "Brought the future of energy planning to life with an AI-powered simulation platform that's more engaging than your favorite strategy game. Combined complex data visualization with intuitive design to make power grid planning actually enjoyable. Created interactive maps that tell the story of tomorrow's sustainable energy landscape.",
-    link: 'https://www.dsider.app/',
+      "Developed comprehensive test automation for a pharmacy e-commerce platform selling healthcare and cosmetic products. Built robust Selenium-based test suites using Java and TestNG, ensuring secure payment processing and regulatory compliance for pharmaceutical sales. Implemented CI/CD pipelines with Jenkins and Maven, maintaining quality standards for critical healthcare product transactions and customer data protection.",
+    link: 'https://frankrosspharmacy.com/',
     tech: [
-      'HighCharts',
-      'Google Cloud Platform',
-      'Advanced Analytics',
-      'RTK Query',
-      'Geospatial Analysis',
+      'Core Java',
+      'Selenium',
+      'Jekins',
+      'TestNG',
+      'Maven',
     ],
-    year: 2024,
+    year: 2018,
   },
   {
-    title: 'DinDin',
+    title: 'Noon Academy',
     description:
-      "Cooked up a delightful food ordering experience that's as smooth as a well-plated dessert. Sprinkled performance optimizations throughout the app like secret ingredients, ensuring it runs smoother than a premium coffee blend. Every animation and interaction was crafted with the same care a chef puts into their signature dish.",
-    link: 'https://www.eatdindin.com/',
+      'Executed comprehensive quality assurance for an educational platform transforming learning experiences globally. Designed and implemented automated testing frameworks using Selenium and Java, ensuring scalable performance for thousands of concurrent users. Built performance testing suites with JMeter and database validation processes for MySQL, maintaining platform reliability during peak learning periods.',
+    link: 'https://www.noonacademy.com/',
     tech: [
-      'Redux Toolkit',
-      'React Native',
-      'Performance Optimization',
-      'Custom Image Pipeline',
-      'State Management',
+      'Core Java',
+      'Selenium',
+      'MySQL',
+      'Jmeter',
     ],
-    year: 2023,
+    year: 2019,
   },
-  {
-    title: 'iAccess Analytics',
-    description:
-      'Designed a feedback system that turns user opinions into actionable insights, like a translator for user happiness. Created intuitive visualizations that make complex data feel like reading your favorite comic book. Built with scalability in mind, because good conversations should never hit a roadblock.',
-    link: 'https://www.iaccess.life/',
-    tech: [
-      'Next.js',
-      'Advanced Analytics',
-      'Real-time Processing',
-      'Custom Analytics Engine',
-    ],
-    year: 2023,
-  },
-  {
-    title: 'ReEntry USA',
-    description:
-      'Developed a digital platform that humanizes the parole transition process, because everyone deserves a second chance with dignity. Created intuitive interfaces that guide users through complex processes with compassion. Every feature was built with empathy, ensuring technology serves humanity.',
-    link: 'https://reentrycenters.org/',
-    tech: [
-      'React 18',
-      'Redux Toolkit',
-      'Geospatial Integration',
-      'Privacy-First Architecture',
-      'FastAPI',
-    ],
-    year: 2022,
-  },
-  {
-    title: 'Cars24 Refurb',
-    description:
-      "Built an inspection system that turns vehicle assessment into a streamlined digital symphony. Crafted real-time synchronization that keeps teams in perfect harmony across locations. Designed media management that handles images and videos with the grace of a professional photographer's portfolio.",
-    link: 'https://www.cars24.com/',
-    tech: [
-      'Real-time Sync',
-      'GraphQL',
-      'Media Optimization',
-      'High-Performance Storage',
-    ],
-    year: 2022,
-  },
+  
 ];
 
 export const experiences = [
   {
     company: 'Crownstack Technologies',
-    role: 'Sr. Software Engineer',
-    period: 'Feb 2024 - Present',
+    role: 'Lead QA Engineer',
+    period: 'June 2022 - Present',
     location: 'Noida',
     description:
-      "Orchestrating beautiful code symphonies while conducting multiple development teams. Known as the 'Code Whisperer' for turning business requirements into elegant technical solutions. Mentoring junior developers with the patience of a Zen master and the enthusiasm of a caffeine-powered rubber duck. Building bridges between technical possibilities and business dreams.",
+      "Leading quality assurance initiatives across multiple development teams, ensuring software excellence from conception to deployment. Architecting comprehensive test strategies and automation frameworks that have reduced critical bugs by 95% and deployment cycles by 60%. Mentoring junior QA engineers in modern testing practices while bridging the gap between technical requirements and business objectives through strategic test planning.",
     companyUrl: 'https://www.crownstack.com/',
     linkedinUrl: 'https://www.linkedin.com/company/crownstack/',
   },
   {
-    company: 'Kiwitech LLC',
-    role: 'Software Engineer - Web',
-    period: 'April 2022 - Jan 2024',
+    company: 'ECM Technologies',
+    role: 'Quality Analyst - Web',
+    period: 'December 2018 - May 2022',
     location: 'Noida',
     description:
-      "Evolved from writing code to crafting experiences, while helping others do the same. Became the go-to person for turning 'impossible' business requirements into 'it's live in production' realities. Established code review practices that feel like collaborative art sessions rather than tedious tasks. Made architectural decisions that even made the database smile.",
-    companyUrl: 'https://www.kiwitech.com/',
-    linkedinUrl: 'https://www.linkedin.com/company/kiwitech/',
-  },
-  {
-    company: 'Cognizant',
-    role: 'Program Analyst',
-    period: 'Jan 2021 - Mar 2022',
-    location: 'Bangalore',
-    description:
-      "Mastered the art of turning business requirements into digital experiences while making e-commerce platforms feel like magic. Collaborated across time zones with the enthusiasm of a morning person (fueled by coffee). Learned that the best code is written when you understand the 'why' behind the 'what'.",
-    companyUrl: 'https://www.cognizant.com/in/en',
-    linkedinUrl: 'https://www.linkedin.com/company/cognizant/',
-  },
-  {
-    company: 'GTB Infotech',
-    role: 'Software Developer Intern',
-    period: 'Sept 2020 - Dec 2020',
-    location: 'Jalandhar',
-    description:
-      "Started the journey from 'Hello World' to 'World, I'm ready to make a difference!' Discovered that coding is an art form and debugging is like being a detective in a mystery novel. Learned that the best features come from understanding user stories, not just user requirements.",
-    companyUrl: 'https://www.gtbinfotech.com/',
-    linkedinUrl: 'https://www.linkedin.com/company/gtbinfotech/',
+      "Evolved from manual testing to building sophisticated automation frameworks, while helping development teams embrace quality-first practices. Became the go-to person for turning complex business requirements into reliable, testable solutions. Established comprehensive testing methodologies and review processes that improved overall team productivity by 40%. Made strategic testing decisions that ensured zero critical production failures.",
+    companyUrl: 'https://www.ecm-technologies.eu/',
+    linkedinUrl: 'https://www.linkedin.com/company/thermaclear/',
   },
 ];
 
@@ -167,7 +124,7 @@ export const skills = {
       url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     { name: 'TypeScript', url: 'https://www.typescriptlang.org/docs/' },
-    { name: 'Python', url: 'https://docs.python.org/3/' },
+    { name: 'Java', url: 'https://dev.java/learn/' },
     { name: 'SQL', url: 'https://dev.mysql.com/doc/' },
   ],
   frontend: [
@@ -208,27 +165,23 @@ export const skills = {
   database: [
     { name: 'PostgreSQL', url: 'https://www.postgresql.org/docs/' },
     { name: 'MongoDB', url: 'https://docs.mongodb.com/' },
-    { name: 'Redis', url: 'https://redis.io/docs/' },
-    { name: 'Prisma', url: 'https://www.prisma.io/docs' },
-    { name: 'TypeORM', url: 'https://typeorm.io/' },
+    { name: 'MySQL', url: 'https://www.mysql.com/' },
   ],
   deployment: [
     { name: 'Docker', url: 'https://docs.docker.com/' },
     { name: 'AWS', url: 'https://docs.aws.amazon.com/' },
-    { name: 'GCP', url: 'https://cloud.google.com/docs' },
-    { name: 'Vercel', url: 'https://vercel.com/docs' },
-    { name: 'Netlify', url: 'https://docs.netlify.com/' },
     { name: 'CI/CD', url: 'https://about.gitlab.com/topics/ci-cd/' },
     { name: 'Kubernetes', url: 'https://kubernetes.io/docs/home/' },
   ],
   testing: [
-    { name: 'Jest', url: 'https://jestjs.io/docs/getting-started' },
+    { name: 'Playwright', url: 'https://playwright.dev/' },
     {
-      name: 'RTL',
-      url: 'https://testing-library.com/docs/react-testing-library/intro/',
+      name: 'Katalon Studio',
+      url: 'https://katalon.com/',
     },
+    { name: 'Rainforest QA', url: 'https://www.rainforestqa.com/home/'},
     { name: 'Cypress', url: 'https://docs.cypress.io/' },
-    { name: 'TDD', url: 'https://www.agilealliance.org/glossary/tdd/' },
+    { name: 'Selenium', url: 'https://www.selenium.dev/' },
   ],
   architecture: [
     {
@@ -260,7 +213,7 @@ export const interests = [
     icon: Bike,
     title: 'Track Day Dreams',
     description:
-      'S1000RR on the wishlist and adrenaline in my veins. When two wheels and a thousand CCs meet, magic happens. Weekend rider plotting track day adventures.',
+      'Defender on the wishlist and adrenaline in my veins. When Eight Cylinder and a V8 Engine meets, magic happens. Weekend rider plotting track day adventures.',
   },
   {
     icon: Music,

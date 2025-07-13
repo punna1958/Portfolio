@@ -8,7 +8,7 @@ import { marked } from 'marked';
 interface BlogPost {
   title: string;
   date: string;
-  category: 'Tech' | 'Development';
+  category: 'Tech' | 'Testing';
   labels: string[];
   excerpt: string;
   content: string;

@@ -10,7 +10,7 @@ const Experience = () => {
   });
 
   return (
-    <section className="py-16 bg-background relative">
+    <section id="experience" className="py-16 bg-background relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-foreground mb-12">Experience</h2>
         <div className="relative" ref={timelineRef}>

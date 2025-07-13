@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Snehdeep-ts/portfolio
+  repo: Puneet-ts/portfolio
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
@@ -23,7 +23,7 @@ collections:
           label: 'Category',
           name: 'category',
           widget: 'select',
-          options: ['Tech', 'Development'],
+          options: ['Tech', 'Testing'],
         }
       - { label: 'Labels', name: 'labels', widget: 'list', allow_add: true }
       - { label: 'Excerpt', name: 'excerpt', widget: 'text' }

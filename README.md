@@ -1,4 +1,4 @@
-# Snehdeep Singh - Portfolio
+# Puneet Yadav - Portfolio
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design with dark mode support and a timeline-based experience section.
 
@@ -43,7 +43,7 @@ src/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Snehdeep-ts/portfolio.git
+git clone https://github.com/Puneet-ts/portfolio.git
 ```
 
 2. **Install dependencies**
@@ -113,9 +113,9 @@ The portfolio is fully responsive with breakpoints:
 
 ## 🔗 Links
 
-- [Live Demo](https://your-portfolio-url.com)
-- [GitHub Repository](https://github.com/Snehdeep-ts/portfolio)
-- [LinkedIn](https://www.linkedin.com/in/snehdeep-singh/)
+- [Live Demo](https://madewithPuneet.com)
+- [GitHub Repository](https://github.com/Puneet-ts/portfolio)
+- [LinkedIn](https://www.linkedin.com/in/puneet-yadav-247303265/)
 
 ## 📄 License
 
@@ -123,14 +123,14 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-**Snehdeep Singh**
-- LinkedIn: [@snehdeep-singh](https://www.linkedin.com/in/snehdeep-singh/)
-- GitHub: [@Snehdeep-ts](https://github.com/Snehdeep-ts)
-- Email: singhsnehdeep99@gmail.com
+**Puneet Yadav**
+- LinkedIn: [@puneet-yadav-247303265](https://www.linkedin.com/in/puneet-yadav-247303265/)
+- GitHub: [@Puneet-ts](https://github.com/Puneet-ts)
+- Email: punitips@yahoo.com
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Snehdeep-ts/portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Puneet-ts/portfolio/issues).
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)

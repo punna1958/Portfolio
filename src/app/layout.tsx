@@ -49,13 +49,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://madewithsneh.com'),
+  metadataBase: new URL('https://madewithPuneet.com'),
   title: {
-    default: 'Snehdeep Singh | Digital Architect & Code Artist',
-    template: '%s | Snehdeep Singh',
+    default: 'Puneet Yadav | SDET and Automation Engineer',
+    template: '%s | Puneet Yadav',
   },
   description:
-    'Digital Architect and Code Artist transforming complex challenges into elegant digital solutions. Specializing in scalable web applications and intuitive user experiences.',
+    'Dynamic Quality Assurance Analyst with a proven track record of ensuring flawless software delivery by mastering SDLC/STLC processes, leveraging cutting-edge tools like Selenium, Katalon Studio, and Playwright, and executing diverse testing methodologies to elevate product quality in Agile and Waterfall frameworks.',
   icons: {
     icon: [
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
@@ -78,51 +78,48 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   keywords: [
-    'Digital Architect',
-    'Code Artist',
-    'Full Stack Developer',
-    'React Developer',
-    'Node.js Developer',
-    'TypeScript Expert',
-    'Web Development',
+    'Quality Assurance',
+    'Automation Engineer',
+    'Automation Test Engineer',
+    'Playwright Master',
+    'Katalon Studio Expert',
+    'Cypress automation',
+    'SDET',
     'UI/UX Engineering',
     'JavaScript Ecosystem',
-    'Performance Optimization',
-    'Cloud Solutions',
-    'System Design',
-    'Database Architecture',
-    'Code Craftsmanship',
+    'Performance Testing',
+    'TypeScript Coding',
     'Technical Leadership',
   ],
   authors: [
     {
-      name: 'Snehdeep Singh',
-      url: 'https://linkedin.com/in/snehdeep-singh',
+      name: 'Puneet Yadav',
+      url: 'https://linkedin.com/in/puneet-yadav-247303265',
     },
   ],
-  creator: 'Snehdeep Singh',
+  creator: 'Puneet Yadav',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://madewithsneh.com',
-    title: 'Snehdeep Singh | Digital Architect & Code Artist',
+    url: 'https://madewithPuneet.com',
+    title: 'Puneet Yadav | SDET and Automation Engineer',
     description:
-      'Digital Architect and Code Artist crafting elegant solutions through innovative development and clean code.',
-    siteName: 'Snehdeep Singh',
+      'Dynamic Quality Assurance Analyst with a proven track record of ensuring flawless software delivery by mastering SDLC/STLC processes, leveraging cutting-edge tools like Selenium, Katalon Studio, and Playwright, and executing diverse testing methodologies to elevate product quality in Agile and Waterfall frameworks.',
+    siteName: 'Puneet Yadav',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Snehdeep Singh - Digital Architect & Code Artist',
+        alt: 'Puneet Yadav - SDET & Lead Automation Test Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Snehdeep Singh | Digital Architect & Code Artist',
+    title: 'Puneet Yadav | SDET & Lead Automation Test Engineer',
     description:
-      'Digital Architect and Code Artist crafting elegant solutions through innovative development and clean code.',
+      'Dynamic Quality Assurance Analyst with a proven track record of ensuring flawless software delivery by mastering SDLC/STLC processes, leveraging cutting-edge tools like Selenium, Katalon Studio, and Playwright, and executing diverse testing methodologies to elevate product quality in Agile and Waterfall frameworks.',
     images: ['/og-image.png'],
   },
   robots: {

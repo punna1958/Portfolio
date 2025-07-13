@@ -13,11 +13,22 @@ export interface Experience {
   period: string;
   location: string;
   description: string;
+  companyUrl?: string;
+  linkedinUrl?: string;
+}
+
+export interface Skill {
+  name: string;
+  url: string;
 }
 
 export interface Skills {
-  programming: string[];
-  frontend: string[];
-  backend: string[];
-  tools: string[];
+  programming: Skill[];
+  frontend: Skill[];
+  styling: Skill[];
+  backend: Skill[];
+  database: Skill[];
+  deployment: Skill[];
+  testing: Skill[];
+  architecture: Skill[];
 }

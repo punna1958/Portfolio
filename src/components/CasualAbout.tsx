@@ -103,13 +103,13 @@ export const CasualAbout = () => {
             <span className="text-lg tracking-wide">
               Lets geek out about it on{' '}
               <a
-                href="https://instagram.com/essdees"
+                href="https://instagram.com/punna_.yadav"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-slate-200 hover:text-slate-50 transition-all duration-300 hover:-translate-y-0.5 font-medium"
               >
                 <Instagram className="w-4 h-4" />
-                <span>@essdees</span>
+                <span>@punna_.yadav</span>
               </a>
             </span>
           </p>
