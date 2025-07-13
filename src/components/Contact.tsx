@@ -97,7 +97,7 @@ export const Contact = () => {
     }
   };
 
-  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleEmailClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     const email = 'punitips@yahoo.com';
     
     // For better compatibility, always try to copy to clipboard as fallback
@@ -110,7 +110,7 @@ export const Contact = () => {
     }, 100);
   };
 
-  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handlePhoneClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     const phone = '+917017478993';
     
     // For better compatibility, always try to copy to clipboard as fallback
@@ -195,7 +195,7 @@ export const Contact = () => {
               Get in Touch
             </h3>
             <p className="text-gray-600 mb-8">
-              I'm always open to discussing new opportunities, collaborations or just chatting about the latest in test automation and quality assurance.
+              I&apos;m always open to discussing new opportunities, collaborations or just chatting about the latest in test automation and quality assurance.
             </p>
 
             <div className="space-y-6">

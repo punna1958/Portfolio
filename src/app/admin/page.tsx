@@ -9,7 +9,7 @@ const Admin = () => {
   useEffect(() => {
     // Redirect to /admin/index.html
     router.push('/admin/index.html');
-  }, []);
+  }, [router]);
 
   return (
     <>

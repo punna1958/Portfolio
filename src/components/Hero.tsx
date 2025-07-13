@@ -27,7 +27,7 @@ export const Hero = () => {
     }, 3000);
   };
 
-  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleEmailClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     const email = 'punitips@yahoo.com';
     
     // For better compatibility, always try to copy to clipboard as fallback
@@ -40,7 +40,7 @@ export const Hero = () => {
     }, 100);
   };
 
-  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handlePhoneClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
     const phone = '+917017478993';
     
     // For better compatibility, always try to copy to clipboard as fallback

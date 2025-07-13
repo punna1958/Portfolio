@@ -12,9 +12,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // All projects should open in modal first
-  const shouldOpenExternally = false;
-
   const handleClick = () => {
     setIsModalOpen(true);
   };
