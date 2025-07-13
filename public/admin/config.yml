@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Puneet-ts/portfolio
+  repo: punna1958/portfolio
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth

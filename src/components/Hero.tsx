@@ -233,7 +233,7 @@ export const Hero = () => {
 
             {/* GitHub Link */}
             <a
-              href="https://github.com/Puneet-ts"
+              href="https://github.com/punna1958"
               target="_blank"
               rel="noopener noreferrer"
               className={`
@@ -251,7 +251,7 @@ export const Hero = () => {
             >
               <Github className="h-4 w-4 flex-shrink-0" />
               <span className="text-sm sm:text-base relative group">
-                Puneet-ts
+                punna1958
                 <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-foreground group-hover:w-full transition-all duration-150 ease-out" />
               </span>
             </a>

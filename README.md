@@ -43,7 +43,7 @@ src/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Puneet-ts/portfolio.git
+git clone https://github.com/punna1958/portfolio.git
 ```
 
 2. **Install dependencies**
@@ -114,7 +114,7 @@ The portfolio is fully responsive with breakpoints:
 ## 🔗 Links
 
 - [Live Demo](https://madewithPuneet.com)
-- [GitHub Repository](https://github.com/Puneet-ts/portfolio)
+- [GitHub Repository](https://github.com/punna1958/portfolio)
 - [LinkedIn](https://www.linkedin.com/in/puneet-yadav-247303265/)
 
 ## 📄 License
@@ -125,12 +125,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Puneet Yadav**
 - LinkedIn: [@puneet-yadav-247303265](https://www.linkedin.com/in/puneet-yadav-247303265/)
-- GitHub: [@Puneet-ts](https://github.com/Puneet-ts)
+- GitHub: [@punna1958](https://github.com/punna1958)
 - Email: punitips@yahoo.com
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Puneet-ts/portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/punna1958/portfolio/issues).
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
