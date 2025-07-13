@@ -89,7 +89,7 @@ export const Contact = () => {
       } else {
         throw new Error('Unable to send an email. Please try again later or contact me directly.');
       }
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: 'Unable to send an email. Please try again later or contact me directly.',
@@ -97,7 +97,7 @@ export const Contact = () => {
     }
   };
 
-  const handleEmailClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleEmailClick = () => {
     const email = 'punitips@yahoo.com';
     
     // For better compatibility, always try to copy to clipboard as fallback
@@ -110,7 +110,7 @@ export const Contact = () => {
     }, 100);
   };
 
-  const handlePhoneClick = (_e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handlePhoneClick = () => {
     const phone = '+917017478993';
     
     // For better compatibility, always try to copy to clipboard as fallback
@@ -175,10 +175,10 @@ export const Contact = () => {
           }}
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-          Let's Work Together
+          Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to elevate your software quality? Let's discuss how my expertise in test automation and QA can help your team deliver exceptional products.
+            Ready to elevate your software quality? Let&apos;s discuss how my expertise in test automation and QA can help your team deliver exceptional products.
           </p>
         </div>
 

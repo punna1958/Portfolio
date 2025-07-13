@@ -5,7 +5,7 @@ import { useInView } from '@/hooks/useInView';
 interface Achievement {
   title: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   color: string;
   bgColor: string;
   frequency?: string;
@@ -154,14 +154,14 @@ export const Achievements = () => {
               Ready to Add Value to Your Team?
             </h3>
             <p className="text-gray-600 mb-6">
-              These achievements reflect my commitment to excellence and continuous improvement. Let's discuss how I can bring this same dedication to your projects.
+              These achievements reflect my commitment to excellence and continuous improvement. Let&apos;s discuss how I can bring this same dedication to your projects.
             </p>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
               <Trophy className="w-5 h-5" />
-              Let's Work Together
+              Let&apos;s Work Together
             </a>
           </div>
         </div>

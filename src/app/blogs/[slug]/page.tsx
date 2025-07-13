@@ -1,9 +1,9 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import { marked } from 'marked';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { notFound } from 'next/navigation';
 
 interface BlogPost {
   title: string;
@@ -14,123 +14,123 @@ interface BlogPost {
   content: string;
 }
 
-export default function BlogPost() {
-  const params = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const filenames = fs.readdirSync(postsDirectory);
+  
+  return filenames.map((filename) => ({
+    slug: filename.replace(/\.md$/, ''),
+  }));
+}
 
-  useEffect(() => {
-    async function fetchPost() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(`/api/blogs/${params?.slug}`);
+async function getPost(slug: string): Promise<BlogPost | null> {
+  try {
+    const filePath = path.join(process.cwd(), 'posts', `${slug}.md`);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data, content } = matter(fileContent);
 
-        if (!res.ok) {
-          const errorData = await res.json();
-          throw new Error(errorData.error || 'Failed to fetch post');
-        }
+    return {
+      title: data.title,
+      date: data.date,
+      category: data.category,
+      labels: data.labels || [],
+      excerpt: data.excerpt,
+      content,
+    };
+  } catch {
+    return null;
+  }
+}
 
-        const data = await res.json();
-        setPost(data);
-      } catch (err) {
-        console.error('Error fetching post:', err);
-        setError(
-          err instanceof Error ? err.message : 'Failed to load blog post'
-        );
-      } finally {
-        setIsLoading(false);
-      }
-    }
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPost(slug);
 
-    if (params?.slug) {
-      fetchPost();
-    }
-  }, [params?.slug]);
-
-  if (isLoading) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-1/4 mb-8"></div>
-          <div className="h-12 bg-gray-200 rounded w-3/4 mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded w-1/4 mb-8"></div>
-          <div className="space-y-3">
-            <div className="h-4 bg-gray-200 rounded"></div>
-            <div className="h-4 bg-gray-200 rounded"></div>
-            <div className="h-4 bg-gray-200 rounded"></div>
-          </div>
-        </div>
-      </div>
-    );
+  if (!post) {
+    notFound();
   }
 
-  if (error) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-red-600 mb-4">Error: {error}</div>
-        <Link href="/blogs" className="text-blue-600 hover:text-blue-800">
-          ← Back to Blogs
-        </Link>
-      </div>
-    );
-  }
-
-  if (!post) return null;
+  const htmlContent = marked(post.content);
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <Link
-          href="/blogs"
-          className="text-blue-600 hover:text-blue-800 inline-flex items-center gap-2"
-        >
-          ← Back to Blogs
-        </Link>
-      </div>
-
-      <article>
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-
-          <div className="flex flex-wrap items-center gap-4 mb-4">
-            <time
-              dateTime={new Date(post.date).toISOString()}
-              className="text-gray-600"
-            >
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+    <main className="min-h-screen bg-white py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <Link 
+            href="/blogs"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Blogs
+          </Link>
+          
+          <div className="mb-4">
+            <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+              post.category === 'Tech' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
+            }`}>
               {post.category}
             </span>
           </div>
-
+          
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            {post.title}
+          </h1>
+          
+          <div className="flex items-center text-gray-600 mb-6">
+            <time dateTime={post.date}>
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          </div>
+          
           {post.labels && post.labels.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
-              {post.labels.map((label) => (
+              {post.labels.map((label, index) => (
                 <span
-                  key={label}
-                  className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+                  key={index}
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
                 >
                   {label}
                 </span>
               ))}
             </div>
           )}
-
-          <p className="text-lg text-gray-600 italic">{post.excerpt}</p>
-        </header>
-
-        <div
-          className="prose lg:prose-xl max-w-none"
-          dangerouslySetInnerHTML={{ __html: marked(post.content) }}
-        />
-      </article>
+        </div>
+        
+        <div className="max-w-none">
+          <div
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        </div>
+        
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="flex justify-between items-center">
+            <Link 
+              href="/blogs"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back to Blogs
+            </Link>
+            
+            <div className="text-sm text-gray-500">
+              Published on {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
