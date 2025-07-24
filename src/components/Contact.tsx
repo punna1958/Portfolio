@@ -110,7 +110,7 @@ export const Contact = () => {
       } else {
         throw new Error('Failed to send message');
       }
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: 'Unable to send message. Please try again or contact me directly at punitips@yahoo.com',
