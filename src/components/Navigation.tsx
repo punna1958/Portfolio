@@ -6,6 +6,12 @@ import { Menu, X, FileText, BookOpen } from 'lucide-react';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Get the correct path for GitHub Pages deployment
+  const getAssetPath = (assetPath: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+    return `${basePath}${assetPath}`;
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -52,7 +58,7 @@ const Navigation = () => {
               Blog
             </Link>
             <a
-              href="/resume.pdf"
+              href={getAssetPath("/resume.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
@@ -75,8 +81,8 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -95,7 +101,7 @@ const Navigation = () => {
                 Blog
               </Link>
               <a
-                href="/resume.pdf"
+                href={getAssetPath("/resume.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white block px-3 py-2 text-base font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2 mx-3 rounded-md"

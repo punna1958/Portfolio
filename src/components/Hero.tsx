@@ -53,6 +53,12 @@ export const Hero = () => {
     }, 100);
   };
 
+  // Get the correct image path for GitHub Pages deployment
+  const getImagePath = (imagePath: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+    return `${basePath}${imagePath}`;
+  };
+
   return (
     <header className="relative bg-background overflow-hidden">
       {/* Toast Notification */}
@@ -130,7 +136,7 @@ export const Hero = () => {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/profile.jpeg"
+                  src={getImagePath("/profile.jpeg")}
                   alt="Puneet Yadav"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

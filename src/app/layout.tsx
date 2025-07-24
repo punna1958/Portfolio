@@ -48,6 +48,8 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
+
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://madewithPuneet.com'),
   title: {

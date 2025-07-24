@@ -1,38 +1,24 @@
 import { useInView } from '@/hooks/useInView';
 import { FileText } from 'lucide-react';
 
-const AnimatedListItem = ({
-  children,
-  delay,
-}: {
-  children: React.ReactNode;
-  delay: number;
-}) => {
-  const [ref, isInView] = useInView({
-    threshold: 0.2,
-    rootMargin: '50px 0px',
-  });
-
-  return (
-    <li
-      ref={ref}
-      className="list-disc list-inside text-gray-600"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateX(0)' : 'translateX(-20px)',
-        transition: `all 700ms ease-out ${delay}ms`,
-      }}
-    >
-      {children}
-    </li>
-  );
-};
+const achievements = [
+  'Reduced regression test execution time by 70% through framework optimization',
+  'Led testing for 15+ web applications across diverse industries',
+  'Achieved 95% test automation coverage for critical user journeys',
+  'Mentored 5 junior QA engineers in automation best practices',
+];
 
 export const About = () => {
   const [sectionRef, isSectionInView] = useInView({
     threshold: 0.2,
     rootMargin: '50px 0px',
   });
+
+  // Get the correct path for GitHub Pages deployment
+  const getAssetPath = (assetPath: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+    return `${basePath}${assetPath}`;
+  };
 
   return (
     <section
@@ -74,54 +60,52 @@ export const About = () => {
           I&apos;m a Software Development Engineer in Test (SDET) who believes in building quality into every line of code. My journey spans from manual testing to crafting sophisticated automation frameworks, always with an eye for both technical excellence and business impact. When I&apos;m not designing test strategies, you&apos;ll find me mentoring fellow QA engineers or exploring the latest in testing innovation.
         </p>
 
+        {/* Achievements Section */}
         <div
-          className="mt-8"
+          className="mt-10"
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 150ms',
+            transition: 'all 700ms ease-out 200ms',
           }}
         >
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
-            What Drives Me:
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Achievements</h3>
           <ul className="space-y-3">
-            <AnimatedListItem delay={200}>
-              Building robust test frameworks that ensure software quality from day one.
-            </AnimatedListItem>
-            <AnimatedListItem delay={250}>
-              Transforming complex business requirements into comprehensive test strategies.
-            </AnimatedListItem>
-            <AnimatedListItem delay={300}>
-              Leading QA teams that don&apos;t just find bugs, but prevent them.
-            </AnimatedListItem>
-            <AnimatedListItem delay={350}>
-              Sharing testing knowledge and elevating the entire team&apos;s quality mindset.
-            </AnimatedListItem>
-            <AnimatedListItem delay={400}>
-              Creating test automation that makes quality assurance seamless and efficient.
-            </AnimatedListItem>
+            {achievements.map((achievement, index) => (
+              <li
+                key={index}
+                className="flex items-start gap-3 text-gray-600"
+                style={{
+                  opacity: isSectionInView ? 1 : 0,
+                  transform: isSectionInView ? 'translateX(0)' : 'translateX(-20px)',
+                  transition: `all 700ms ease-out ${300 + index * 100}ms`,
+                }}
+              >
+                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
+                {achievement}
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Professional Background */}
         <div
-          className="mt-8 text-lg text-gray-600"
+          className="mt-10 bg-gray-50 p-6 rounded-lg"
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 700ms ease-out 450ms',
+            transition: 'all 700ms ease-out 400ms',
           }}
         >
-          <p>
-            Whether it&apos;s optimizing existing test suites or designing new automation frameworks, I believe in the perfect balance of innovation and
-            reliability. Every test case is an opportunity to make the
-            digital world a bit more stable, a bit more user-friendly and a lot
-            more trustworthy.
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Professional Philosophy</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Quality isn&apos;t just about finding bugs—it&apos;s about understanding user needs, collaborating across teams, and building confidence in every release. I approach testing as both an art and a science, combining analytical thinking with creative problem-solving to ensure software not only works but delights users.
           </p>
         </div>
 
+        {/* Call to Action */}
         <div
-          className="mt-12 pt-8 border-t border-gray-100"
+          className="mt-10 text-center"
           style={{
             opacity: isSectionInView ? 1 : 0,
             transform: isSectionInView ? 'translateY(0)' : 'translateY(20px)',
@@ -131,17 +115,17 @@ export const About = () => {
           <p className="text-gray-600 flex items-center gap-2">
             For a more formal introduction, check out my resume:
             <a
-  href="/resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 text-gray-900 hover:text-blue-600 font-medium transition-colors duration-200"
->
-  <FileText className="w-4 h-4" />
-  <span className="relative">
-    View Resume
-    <span className="absolute left-0 right-0 bottom-0 h-px bg-current scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-  </span>
-</a>
+              href={getAssetPath("/resume.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-900 hover:text-blue-600 font-medium transition-colors duration-200"
+            >
+              <FileText className="w-4 h-4" />
+              <span className="relative">
+                Resume
+                <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-blue-600 transition-all duration-200 hover:w-full" />
+              </span>
+            </a>
           </p>
         </div>
       </div>
