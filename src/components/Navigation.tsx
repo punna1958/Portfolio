@@ -36,7 +36,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold text-gray-900">Puneet Yadav</span>
+          <span className="text-xl font-bold text-gray-900">Puneet Yadav</span>
           </div>
 
           {/* Desktop Navigation */}
