@@ -20,6 +20,18 @@ interface Post {
 // External blog posts
 const externalPosts: Post[] = [
   {
+    slug: 'playwright-advanced',
+    frontmatter: {
+      title: "Playwright Advanced: Mastering Web Automation and Testing",
+      date: '2025-07-16',
+      category: 'Testing',
+      labels: ['Playwright', 'Advanced', 'Web Automation', 'Testing Frameworks', 'Page Object Model', 'API Testing', 'Visual Testing', 'Performance Testing'],
+      excerpt: "Comprehensive guide covering advanced Playwright techniques for experienced developers and QA engineers. Explore sophisticated testing strategies, custom fixtures, advanced selectors, API testing, performance monitoring, and debugging techniques for robust test automation."
+    },
+    isExternal: true,
+    externalUrl: 'https://blog.crownstack.com/blog/fls/playwright-advanced'
+  },
+  {
     slug: 'playwright-basics',
     frontmatter: {
       title: "Playwright Basics: A Beginner's Guide to Web Automation",
@@ -92,7 +104,7 @@ export default async function BlogsPage() {
         <Link href="/" className="text-white-600 hover:text-white-800 inline-flex items-center gap-2 mb-4">
           ← Back to Portfolio
         </Link>
-        <h1 className="text-4xl font-bold text-white-900 mb-4">Blog</h1>
+        <h1 className="text-4xl font-bold text-white-900 mb-4">Blogs (Page Under Development)</h1>
         <p className="text-gray-300 text-base">Insights on testing, automation, and software quality</p>
       </div>
 

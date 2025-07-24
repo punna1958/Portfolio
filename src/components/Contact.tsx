@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Send, Check, X, CheckCircle, XCircle } from 'lucid
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   subject: string;
   message: string;
 }
@@ -30,6 +31,7 @@ export const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: '',
   });
@@ -56,6 +58,16 @@ export const Contact = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    
+    // Validate phone number field to only allow digits and common phone characters
+    if (name === 'phone') {
+      // Allow only digits, +, -, (, ), and spaces
+      const phoneRegex = /^[0-9+\-\(\)\s]*$/;
+      if (!phoneRegex.test(value)) {
+        return; // Don't update if invalid characters are entered
+      }
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value,
@@ -67,7 +79,10 @@ export const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Formspree form ID for direct email sending
+      const FORMSPREE_ID = 'mblkolpe';
+      
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,6 +90,7 @@ export const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
         }),
@@ -83,17 +99,27 @@ export const Contact = () => {
       if (response.ok) {
         setStatus({
           type: 'success',
-          message: 'Email sent successfully! I will get back to you shortly.',
+          message: 'Message sent successfully! I will get back to you shortly.',
         });
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setStatus({ type: 'idle', message: '' });
+        }, 5000);
       } else {
-        throw new Error('Unable to send an email. Please try again later or contact me directly.');
+        throw new Error('Failed to send message');
       }
-    } catch {
+    } catch (error) {
       setStatus({
         type: 'error',
-        message: 'Unable to send an email. Please try again later or contact me directly.',
+        message: 'Unable to send message. Please try again or contact me directly at punitips@yahoo.com',
       });
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setStatus({ type: 'idle', message: '' });
+      }, 5000);
     }
   };
 
@@ -243,8 +269,7 @@ export const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name *
-
+                    Your Name *
                   </label>
                   <input
                     type="text"
@@ -259,7 +284,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
+                    Your Email *
                   </label>
                   <input
                     type="email"
@@ -272,6 +297,23 @@ export const Contact = () => {
                     placeholder="your@email.com"
                   />
                 </div>
+              </div>
+              
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  pattern="[0-9+\-\(\)\s]*"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-black"
+                  placeholder="+91 70174 78993"
+                  title="Please enter only digits and phone number characters (+, -, parentheses, spaces)"
+                />
               </div>
               
               <div>
